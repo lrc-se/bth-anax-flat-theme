@@ -1,9 +1,41 @@
 /** 
 * Anax Flat theme.
 */
-@import url(modules.less);
+@import url('modules.less');
+
+@color-bg: #7f7878;
+@color-dark: #4f4840;
+@color-med-light: #afa8a0;
+@color-med-dark: #8a8880;
+@color-light: #f8f8f8;
+@color-text: #2f2820;
 
 
+body {
+    color: @color-text;
+    background-color: @color-bg;
+    overflow-y: scroll;
+}
+
+.wrap-all {
+    margin: 1em auto;
+    max-width: 1100px;
+    border: 2px solid @color-text;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .75);
+}
+
+a {
+    color: @color-bg;
+    
+    &:hover {
+        color: @color-med-dark;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+}
 
 /** --------------------------------------------------------------
  *  Logo images
@@ -17,5 +49,191 @@
 .site-logo-text-icon {
     img {
         vertical-align: bottom;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-header {
+    background-color: @color-dark;
+    overflow: hidden;
+    a, a:hover {
+        color: @color-light;
+        text-decoration: none;
+    }
+}
+.site-logo-text {
+    float: left;
+    padding: 4px 16px;
+    font-size: 36px;
+}
+
+.navbar2 {
+    float: right;
+}
+
+.rm-desktop {
+    li {
+        float: left;
+        font-weight: bold;
+        display: block;
+        
+        a {
+            color: @color-light;
+            
+            &:hover {
+                color: @color-light;
+                background-color: @color-med-dark;
+                text-decoration: none;
+            }
+        }
+    }
+    li.selected, li.selected-parent {
+        a, a:hover {
+            color: @color-dark;
+            background-color: @color-med-light;
+            text-decoration: none;
+        }
+    }
+}
+
+.rm-max .rm-small .rm-button,
+.rm-mobile {
+    display: none;
+}
+
+
+/** --------------------------------------------------------------
+ *  Flash
+ */
+.flash-wrap img {
+    vertical-align: bottom;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list ul {
+    margin: 0;
+    padding: .5em 1em;
+    color: @color-dark;
+    background-color: @color-med-light;
+    font-size: .8em;
+    list-style-type: none;
+    
+    li {
+        display: inline-block;
+        
+        &::after {
+            content: " ›";
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+ .sidebar {
+    width: 25%;
+}
+
+.toc > h4 {
+    margin-top: 0;
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+ .inner-wrap-main {
+    padding: 0 2em 1em;
+    background-color: @color-light;
+    overflow: auto;
+}
+.main.has-sidebar-left {
+    margin-left: 25%;
+}
+
+.next-previous {
+    margin-top: 3em;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    padding: 0 2em;
+    background-color: @color-med-light;
+    overflow: auto;
+}
+
+.byline {
+    font-size: .8em;
+}
+.byline > p:first-child {
+    float: left;
+    margin-top: 0;
+}
+.byline > p:last-child {
+    margin-left: 80px;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.outer-wrap-footer {
+    margin-bottom: 0;
+}
+.footer {
+    color: @color-light;
+    background-color: @color-dark;
+    overflow: auto;
+}
+
+.byline > p:first-child {
+    float: left;
+    margin-top: 0;
+}
+.byline > p:last-child {
+    margin-left: 80px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    body {
+        background-color: @color-dark;
+    }
+    
+    .wrap-all {
+        margin: 0;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+
+@media only screen and (max-width: 639px) {
+    .navbar2 {
+        display: none;
+    }
+    
+    .rm-max.rm-navbar,
+    .rm-max .rm-small .rm-button.rm-clicked {
+        top: 4px;
+        right: 16px;
+    }
+    .rm-max .rm-small .rm-button {
+        font-size: 2em;
+        display: inline-block;
+    }
+    .rm-mobile {
+        display: block;
     }
 }
