@@ -23,6 +23,7 @@
 body {
     color: @color-text;
     background-color: @color-bg;
+    font-size: 16px;
     overflow-y: scroll;
 }
 
@@ -31,7 +32,6 @@ body {
     max-width: 1100px;
     border: 2px solid @color-text;
     box-shadow: 0 0 2px rgba(0, 0, 0, .75);
-    box-sizing: border-box;
 }
 
 
@@ -48,6 +48,14 @@ a {
 
 img {
     max-width: 100%;
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.border {
+    border: 1px solid @color-text;
 }
 
 
@@ -69,6 +77,7 @@ img {
     padding: 4px 16px;
     font-size: 36px;
     font-weight: bold;
+    text-shadow: 2px 2px 1px #000;
 }
 
 .navbar2 {
@@ -114,20 +123,23 @@ img {
  *  Flash
  */
 .flash-wrap img {
-    vertical-align: bottom;
+    display: block;
 }
 
 
 /** --------------------------------------------------------------
  *  Breadcrumb
  */
-.breadcrumb-list ul {
-    margin: 0;
-    padding: .5em 16px;
+.breadcrumb-wrap {
+    padding: .5em 1em;
     color: @color-dark;
     background-color: @color-med-light;
     border-top: 1px solid @color-dark;
     border-bottom: 1px solid @color-med-dark;
+}
+.breadcrumb-list ul {
+    margin: 0;
+    padding: 0;
     font-size: .8em;
     list-style-type: none;
     
@@ -136,6 +148,9 @@ img {
         
         &::after {
             content: " ›";
+        }
+        &:last-child::after {
+            display: none;
         }
         
         a {
@@ -152,7 +167,7 @@ img {
 /** --------------------------------------------------------------
  *  Sidebar
  */
- .sidebar {
+.sidebar {
     width: 25%;
 }
 
@@ -185,7 +200,7 @@ img {
 /** --------------------------------------------------------------
  *  Main
  */
- .inner-wrap-main {
+.inner-wrap-main {
     padding: 0 2em 1em;
     background-color: @color-light;
     overflow: auto;
@@ -210,23 +225,28 @@ img {
  *  After-Main
  */
 .after-main {
-    padding: 0 2em;
+    padding: 0 1em;
     background-color: @color-med-light;
     border-top: 1px solid @color-med-dark;
     overflow: auto;
+    
+    a {
+        color: @color-dark;
+        
+        &:hover {
+            color: @color-bg;
+        }
+    }
 }
 
-.byline {
-    font-size: .8em;
-}
 .byline > p:first-child {
     float: left;
     margin-top: 0;
 }
 .byline > p:last-child {
-    margin-left: 80px;
+    margin-left: 76px;
+    font-size: .8em;
 }
-
 
 
 /** --------------------------------------------------------------
@@ -236,6 +256,7 @@ img {
     margin-bottom: 0;
 }
 .footer {
+    padding: 0 1em;
     color: @color-light;
     background-color: @color-dark;
     border-top: 1px solid @color-text;
@@ -246,13 +267,6 @@ img {
     }
 }
 
-.byline > p:first-child {
-    float: left;
-    margin-top: 0;
-}
-.byline > p:last-child {
-    margin-left: 80px;
-}
 
 
 /** --------------------------------------------------------------
@@ -262,7 +276,6 @@ img {
     body {
         background-color: @color-dark;
     }
-    
     .wrap-all {
         margin: 0;
         border: none;
@@ -282,16 +295,15 @@ img {
         
         ul {
             margin: 0;
-            padding: 0;
             line-height: 1.5;
         }
         li {
-            margin-right: .5em;
             display: inline-block;
             
             &::after {
                 content: "|";
                 margin-left: .5em;
+                margin-right: .5em;
                 font-weight: normal;
             }
             &:last-child::after,
@@ -302,31 +314,35 @@ img {
     }
     
     .main {
+        &.has-sidebar {
+            border-top: 1px solid @color-med-light;
+        }
         &.has-sidebar-left {
             margin-left: 0;
             padding-left: 0;
             border-left: none;
-        }
-        &.has-sidebar {
-            border-top: 1px solid @color-med-light;
         }
     }
 }
 
 
 @media only screen and (max-width: 639px) {
+    body {
+        font-size: 14px;
+    }
+    
     .site-logo-text {
-        font-size: 32px;
+        padding: 4px 14px;
+        font-size: 30px;
     }
     
     .navbar2 {
         display: none;
     }
-    
     .rm-max.rm-navbar,
     .rm-max .rm-small .rm-button.rm-clicked {
-        top: 8px;
-        right: 16px;
+        top: 7px;
+        right: 14px;
         color: @color-light;
     }
     .rm-max .rm-small .rm-button {
@@ -340,7 +356,7 @@ img {
         box-shadow: none;
         
         &.rm-clicked {
-            box-shadow: 0 0 2px 2px #000;
+            box-shadow: 0 0 3px 1px #000;
         }
         
         li {
@@ -372,8 +388,8 @@ img {
     .main {
         min-height: 15em;
     }
-    
-    .after-main {
-        padding: 0 1em;
+
+    .byline > p:last-child {
+        margin-left: 74px;
     }
 }

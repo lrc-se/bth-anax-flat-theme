@@ -2880,7 +2880,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   font-family: FontAwesome;
   float: right;
   box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.4);
-  background-color: 444;
+  background-color: #444;
   padding: 8px 24px;
   margin-right: 8px;
   margin-top: 10px;
@@ -2918,6 +2918,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 body {
   color: #2f2820;
   background-color: #6f6860;
+  font-size: 16px;
   overflow-y: scroll;
 }
 .wrap-all {
@@ -2925,7 +2926,6 @@ body {
   max-width: 1100px;
   border: 2px solid #2f2820;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
-  box-sizing: border-box;
 }
 /** --------------------------------------------------------------
  *  Global element styles
@@ -2938,6 +2938,12 @@ a:hover {
 }
 img {
   max-width: 100%;
+}
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.border {
+  border: 1px solid #2f2820;
 }
 /** --------------------------------------------------------------
  *  Header
@@ -2957,6 +2963,7 @@ img {
   padding: 4px 16px;
   font-size: 36px;
   font-weight: bold;
+  text-shadow: 2px 2px 1px #000;
 }
 .navbar2 {
   float: right;
@@ -2993,18 +3000,21 @@ img {
  *  Flash
  */
 .flash-wrap img {
-  vertical-align: bottom;
+  display: block;
 }
 /** --------------------------------------------------------------
  *  Breadcrumb
  */
-.breadcrumb-list ul {
-  margin: 0;
-  padding: .5em 16px;
+.breadcrumb-wrap {
+  padding: .5em 1em;
   color: #4f4840;
   background-color: #afa8a0;
   border-top: 1px solid #4f4840;
   border-bottom: 1px solid #8f8880;
+}
+.breadcrumb-list ul {
+  margin: 0;
+  padding: 0;
   font-size: .8em;
   list-style-type: none;
 }
@@ -3013,6 +3023,9 @@ img {
 }
 .breadcrumb-list ul li::after {
   content: " ›";
+}
+.breadcrumb-list ul li:last-child::after {
+  display: none;
 }
 .breadcrumb-list ul li a {
   color: #4f4840;
@@ -3072,20 +3085,24 @@ img {
  *  After-Main
  */
 .after-main {
-  padding: 0 2em;
+  padding: 0 1em;
   background-color: #afa8a0;
   border-top: 1px solid #8f8880;
   overflow: auto;
 }
-.byline {
-  font-size: .8em;
+.after-main a {
+  color: #4f4840;
+}
+.after-main a:hover {
+  color: #6f6860;
 }
 .byline > p:first-child {
   float: left;
   margin-top: 0;
 }
 .byline > p:last-child {
-  margin-left: 80px;
+  margin-left: 76px;
+  font-size: .8em;
 }
 /** --------------------------------------------------------------
  *  Footer
@@ -3094,6 +3111,7 @@ img {
   margin-bottom: 0;
 }
 .footer {
+  padding: 0 1em;
   color: #f4f4f4;
   background-color: #4f4840;
   border-top: 1px solid #2f2820;
@@ -3102,13 +3120,6 @@ img {
 .footer a,
 .footer a:hover {
   color: #afa8a0;
-}
-.byline > p:first-child {
-  float: left;
-  margin-top: 0;
-}
-.byline > p:last-child {
-  margin-left: 80px;
 }
 /** --------------------------------------------------------------
  *  Responsive
@@ -3134,42 +3145,45 @@ img {
   }
   .toc ul {
     margin: 0;
-    padding: 0;
     line-height: 1.5;
   }
   .toc li {
-    margin-right: .5em;
     display: inline-block;
   }
   .toc li::after {
     content: "|";
     margin-left: .5em;
+    margin-right: .5em;
     font-weight: normal;
   }
   .toc li:last-child::after,
   .toc li::before {
     display: none;
   }
+  .main.has-sidebar {
+    border-top: 1px solid #afa8a0;
+  }
   .main.has-sidebar-left {
     margin-left: 0;
     padding-left: 0;
     border-left: none;
   }
-  .main.has-sidebar {
-    border-top: 1px solid #afa8a0;
-  }
 }
 @media only screen and (max-width: 639px) {
+  body {
+    font-size: 14px;
+  }
   .site-logo-text {
-    font-size: 32px;
+    padding: 4px 14px;
+    font-size: 30px;
   }
   .navbar2 {
     display: none;
   }
   .rm-max.rm-navbar,
   .rm-max .rm-small .rm-button.rm-clicked {
-    top: 8px;
-    right: 16px;
+    top: 7px;
+    right: 14px;
     color: #f4f4f4;
   }
   .rm-max .rm-small .rm-button {
@@ -3183,7 +3197,7 @@ img {
     box-shadow: none;
   }
   .rm-max .rm-mobile.rm-clicked {
-    box-shadow: 0 0 2px 2px #000;
+    box-shadow: 0 0 3px 1px #000;
   }
   .rm-max .rm-mobile li {
     background-color: #4f4840;
@@ -3209,7 +3223,7 @@ img {
   .main {
     min-height: 15em;
   }
-  .after-main {
-    padding: 0 1em;
+  .byline > p:last-child {
+    margin-left: 74px;
   }
 }
