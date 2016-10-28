@@ -40,6 +40,7 @@ body {
  */
 a {
     color: @color-bg;
+    text-decoration: underline;
     
     &:hover {
         color: @color-med-dark;
@@ -50,12 +51,30 @@ img {
     max-width: 100%;
 }
 
+abbr[title] {
+    cursor: help;
+}
+
 
 /** --------------------------------------------------------------
  *  Global styles
  */
 .border {
     border: 1px solid @color-text;
+}
+
+.notice {
+    padding: .5em;
+    background-color: @color-med-light;
+    border: 1px solid @color-bg;
+    
+    a {
+        color: @color-dark;
+        
+        &:hover {
+            color: @color-bg;
+        }
+    }
 }
 
 

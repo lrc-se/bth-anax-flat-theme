@@ -2932,6 +2932,7 @@ body {
  */
 a {
   color: #6f6860;
+  text-decoration: underline;
 }
 a:hover {
   color: #8f8880;
@@ -2939,11 +2940,25 @@ a:hover {
 img {
   max-width: 100%;
 }
+abbr[title] {
+  cursor: help;
+}
 /** --------------------------------------------------------------
  *  Global styles
  */
 .border {
   border: 1px solid #2f2820;
+}
+.notice {
+  padding: .5em;
+  background-color: #afa8a0;
+  border: 1px solid #6f6860;
+}
+.notice a {
+  color: #4f4840;
+}
+.notice a:hover {
+  color: #6f6860;
 }
 /** --------------------------------------------------------------
  *  Header
