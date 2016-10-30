@@ -1,0 +1,9 @@
+.show-grid(@max-size: @max-width) {
+    background-image: url('../img/grid/grid940x12x60x20-nomargin.png');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+
+    @media (min-width: @max-width) {
+        background-size: @max-width auto;
+    }
+}

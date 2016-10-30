@@ -132,12 +132,21 @@ upgrade-normalize:
 
 
 
-# target: upgrade-responsive-menu - Upgrade LESS module - Responsive menu
+# target: upgrade-responsive-menu - Upgrade LESS module - Responsive menu.
 .PHONY: upgrade-responsive-menu
 upgrade-responsive-menu:
 	@$(call HELPTEXT,$@)
 	wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/less/responsive-menu.less -O $(LESS_MODULES)/responsive-menu.less
 	wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/js/responsive-menu.js -O js/responsive-menu.js
+
+
+
+# target: upgrade-grid            - Upgrade LESS module - Grid.
+.PHONY: upgrade-grid
+upgrade-grid:
+	@$(call HELPTEXT,$@)
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-flex.less -O $(LESS_MODULES)/grid-flex.less
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-float.less -O $(LESS_MODULES)/grid-float.less
 
 
 
