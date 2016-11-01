@@ -1,0 +1,20 @@
+/**
+ * Typographic mixins.
+ */
+
+.font(@size: 1em, @family: @font-family-body) {
+    font: @size/@base-line-height @family;
+
+    @media (max-width: @breakpoint-small) {
+        line-height: @base-line-height2;
+    }
+}
+
+.font-size(@size) {
+    font-size: @size;
+    line-height: @base-line-height / unit(@size) * ceil(unit(@size) / @base-line-height);
+    
+    @media (max-width: @breakpoint-small) {
+        line-height: @base-line-height2 / unit(@size) * ceil(unit(@size) / @base-line-height2);
+    }
+}

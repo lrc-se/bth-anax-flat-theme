@@ -1,0 +1,227 @@
+/**
+ * Typographic defaults.
+ */
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: @font-family-headings;
+    margin-top: 0;
+    margin-bottom: @line-height;
+}
+
+h1 {
+    .font-size(@font-size-h1);
+    
+    // If heading below h1, then assume larger margin top
+    & ~ h1,
+    & ~ h2,
+    & ~ h3,
+    & ~ h4,
+    & ~ h5,
+    & ~ h6 {
+        margin-top: @line-height * 1.5;
+        margin-bottom: @line-height / 2;
+    }
+    
+    // Single margin when subheading follows directly
+    & + h2 {
+        margin-top: @line-height;
+    }
+}
+
+h2 {
+    .font-size(@font-size-h2);
+    
+    // Single margin when subheading follows directly
+    & + h3 {
+        margin-top: @line-height;
+    }
+}
+
+h3 {
+    .font-size(@font-size-h3);
+}
+
+h4 {
+    .font-size(@font-size-h4);
+}
+
+h5 {
+    .font-size(@font-size-h5);
+}
+
+h6 {
+    .font-size(@font-size-h6);
+}
+
+
+/**
+ * Text elements
+ */
+p {
+    margin-top: 0;
+    margin-bottom: @line-height;
+}
+
+small,
+strong,
+b,
+mark,
+abbr,
+dfn,
+em,
+i {
+    line-height: 1em;
+}
+
+small {
+    font-size: @font-size-small; 
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+abbr[title],
+dfn[title] {
+    text-decoration: dotted underline;
+    cursor: help;
+}
+
+em,
+i,
+dfn {
+    font-style: italic;
+}
+
+sub,
+sup {
+    font-size: @font-size-sup-sub;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -.75em;
+}
+sub {
+    bottom: -.25em;
+}
+
+blockquote {
+    margin: 0 0 @line-height 0;
+    padding-left: 1em;
+}
+
+
+
+/**
+ * Display source code.
+ */
+pre,
+code,
+kbd,
+samp {
+    font-family: @font-family-code;
+    line-height: 1em;
+}
+
+pre,
+pre code {
+    white-space: pre;
+}
+pre {
+    margin-top: 0;
+    margin-bottom: @line-height;
+}
+pre code {
+    display: block;
+    overflow: auto;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, 
+ol {
+    margin-top: 0;
+    margin-bottom: @line-height;
+    padding-left: 1.5em;
+
+    p { 
+        margin-top: @line-height / 2;
+        margin-bottom: @line-height / 2;
+    }
+
+    & ul,
+    & ol {
+        margin: 0;
+    }
+}
+
+ul {
+      list-style-type: disc;
+}
+
+ol {
+      list-style-type: decimal;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: @line-height;
+}
+dt { 
+    font-weight: bold;
+}
+dd { 
+    margin-left: 1.5em;
+    margin-bottom: @line-height;
+}
+
+
+
+/**
+ * Tables
+ */
+table {
+    margin-bottom: @line-height;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 0 1em 0 0;
+    text-align: left;
+    
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.table {
+    th,
+    td {
+        padding-top: @line-height / 2;
+        padding-bottom: @line-height / 2;
+    }
+}
+
+
+
+/**
+ * More typography elements
+ */
+hr {
+    height: 0;
+    margin-top: -1px;
+    margin-bottom: @line-height;
+    border: none;
+    border-top: 1px solid;
+}
