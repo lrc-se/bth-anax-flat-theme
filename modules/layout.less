@@ -52,13 +52,13 @@
 }
 
 
-@media only screen and (max-width: 911px) {
+@media only screen and (max-width: @breakpoint-large) {
     .main {
         .column(12);
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: @breakpoint-med) {
     .sidebar-left {
         .column(12);
     }
@@ -71,7 +71,7 @@
 }
 
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: @breakpoint-small) {
     .bottom-column {
         .column(12);
     }
