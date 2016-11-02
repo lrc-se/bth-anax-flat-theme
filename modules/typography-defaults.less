@@ -6,7 +6,12 @@
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: @font-family-headings;
     margin-top: 0;
     margin-bottom: @line-height;
@@ -16,7 +21,6 @@ h1 {
     .font-size(@font-size-h1);
     
     // If heading below h1, then assume larger margin-top
-    & ~ h1,
     & ~ h2,
     & ~ h3,
     & ~ h4,
@@ -27,41 +31,30 @@ h1 {
     }
     
     // Single margin when subheading follows directly
-    & + h2 {
-        margin-top: @line-height;
+    & + h2,
+    & ~ h2 + h3,
+    & ~ h3 + h4,
+    & ~ h4 + h5,
+    & ~ h5 + h6 {
+        margin-top: 0;
+        margin-bottom: @line-height;
     }
 }
 
 h2 {
     .font-size(@font-size-h2);
-    
-    & + h3 {
-        margin-top: @line-height;
-    }
 }
 
 h3 {
     .font-size(@font-size-h3);
-
-    & + h4 {
-        margin-top: @line-height;
-    }
 }
 
 h4 {
     .font-size(@font-size-h4);
-
-    & + h5 {
-        margin-top: @line-height;
-    }
 }
 
 h5 {
     .font-size(@font-size-h5);
-
-    & + h6 {
-        margin-top: @line-height;
-    }
 }
 
 h6 {

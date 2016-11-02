@@ -19,13 +19,13 @@
 
 // Grid visualization
 .route-grid .wrap-all:hover,
-.vert-grid .wrap-all {
+.grid-vert .wrap-all {
     .inner-wrap-main,
     .inner-wrap-columns-below {
         .show-grid();
     }
 }
-.vert-grid-top .wrap-all {
+.grid-vert-top .wrap-all {
     position: relative;
     
     &::after {
@@ -41,12 +41,12 @@
     }
 }
 .route-typography .wrap-all:hover,
-.horiz-grid .wrap-all {
+.grid-horiz .wrap-all {
     .inner-wrap-main {
         .show-baseline-grid();
     }
 }
-.horiz-grid-top .wrap-all {
+.grid-horiz-top .wrap-all {
     position: relative;
     
     &::after {
@@ -102,7 +102,7 @@ img {
     max-width: 100%;
 }
 p > img {
-    display: block;
+    vertical-align: bottom;
 }
 
 
@@ -158,11 +158,11 @@ p > img {
 .site-logo-text {
     float: left;
     position: relative;
-    left: 16px;
+    left: @base-font-size;
     top: -1px;
     font-size: 2em;
     font-weight: bold;
-    line-height: 1.3;
+    line-height: @line-height * 2;
     text-shadow: 2px 2px 1px #000;
 }
 
@@ -230,6 +230,10 @@ p > img {
     .font-size(.75em);
     list-style-type: none;
     
+    &::before {
+        content: "» ";
+    }
+    
     li {
         display: inline-block;
         
@@ -242,9 +246,11 @@ p > img {
         
         a {
             color: @color-dark;
+            text-decoration: none;
             
             &:hover {
                 color: @color-bg;
+                text-decoration: underline;
             }
         }
     }
@@ -295,7 +301,7 @@ div.toc li {
     overflow: hidden;
 }
 .main {
-    min-height: 20 * @line-height;
+    min-height: @line-height * 20;
     .content-spacing();
 }
 .main.has-sidebar-left {
@@ -310,7 +316,7 @@ div.toc li {
 }
 
 .next-previous {
-    margin-top: 2 * @line-height;
+    margin-top: @line-height * 2;
 }
 
 
@@ -405,7 +411,7 @@ div.toc li {
 /** --------------------------------------------------------------
  *  Responsive
  */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: @max-width) {
     body {
         background-color: @color-dark;
     }
@@ -423,8 +429,8 @@ div.toc li {
     }
     .rm-max.rm-navbar,
     .rm-max .rm-small .rm-button.rm-clicked {
-        top: 5px;
-        right: 16px;
+        top: 6px;
+        right: @base-font-size;
         color: @color-bg-light;
     }
     .rm-max .rm-small .rm-button {
@@ -432,6 +438,7 @@ div.toc li {
         display: inline-block;
     }
     .rm-max .rm-mobile {
+        padding-top: @line-height * 3;
         background-color: @color-text;
         border-left: 2px solid #000;
         display: block;
@@ -443,9 +450,9 @@ div.toc li {
         
         li {
             background-color: @color-dark;
-            font-weight: bold;
             
             a {
+                padding: (@line-height / 2) 1em;
                 color: @color-bg-light;
                 
                 &:hover {
@@ -498,6 +505,7 @@ div.toc li {
     
     .main {
         &.has-sidebar-left {
+            margin-top: @line-height - 1px;
             border-left: none;
         }
         &.has-sidebar-right {
@@ -513,16 +521,14 @@ div.toc li {
     }
     
     .site-logo-text {
-        left: 14px;
-        top: 0;
-        font-size: 1.75em;
-        line-height: 1.63265;
+        left: @base-font-size2;
+        font-size: 1.875em;
     }
     
     .rm-max.rm-navbar,
     .rm-max .rm-small .rm-button.rm-clicked {
-        top: 6px;
-        right: 14px;
+        top: 7px;
+        right: @base-font-size2;
     }
 
     .sidebar-left {
@@ -531,11 +537,7 @@ div.toc li {
     }
     
     .main {
-        min-height: 15 * @line-height;
-        
-        &.has-sidebar-left {
-            margin-top: @line-height;
-        }
+        min-height: @line-height * 15;
     }
 
     .byline > p:last-child {
