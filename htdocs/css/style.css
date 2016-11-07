@@ -2908,6 +2908,15 @@ h6 {
     line-height: 1.67619048;
   }
 }
+hr + h1,
+hr + h2,
+hr + h3,
+hr + h4,
+hr + h5,
+hr + h6 {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
 /**
  * Text elements
  */
@@ -3406,10 +3415,12 @@ a:hover {
 }
 img {
   max-width: 100%;
-}
-p > img {
   vertical-align: bottom;
 }
+/*p > img,
+p > a > img {
+    vertical-align: bottom;
+}*/
 /** --------------------------------------------------------------
  *  Global styles
  */
@@ -3426,6 +3437,36 @@ p > img {
 }
 .notice a:hover {
   color: #6f6860;
+}
+.palette {
+  margin-left: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: palette;
+}
+.palette::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.palette li {
+  float: left;
+  width: 1.75em;
+  margin: 2px 4px 2px 0;
+  border: 1px solid #2f2820;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+  display: block;
+  cursor: cell;
+  counter-increment: palette;
+}
+.palette li.inv {
+  color: #f4f4f4;
+}
+.palette li::before {
+  content: counter(palette);
 }
 /** --------------------------------------------------------------
  *  Header
