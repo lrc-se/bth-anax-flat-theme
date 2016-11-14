@@ -2,13 +2,33 @@
 #
 #
 
+# Detect OS
+OS = $(shell uname -s)
+
+# Defaults
+ECHO = echo
+
+# Make adjustments based on OS
+# http://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux/27776822#27776822
+ifneq (, $(findstring CYGWIN, $(OS)))
+	ECHO = /bin/echo -e
+endif
+
 # Colors and helptext
 NO_COLOR	= \033[0m
 ACTION		= \033[32;01m
 OK_COLOR	= \033[32;01m
 ERROR_COLOR	= \033[31;01m
 WARN_COLOR	= \033[33;01m
-HELPTEXT 	= /bin/echo -e "$(ACTION)--->" `egrep "^\# target: $(1) " Makefile | sed "s/\# target: $(1)[ ]\+- / /g"` "$(NO_COLOR)"
+
+# Which makefile am I in?
+WHERE-AM-I = $(CURDIR)/$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_MAKEFILE := $(call WHERE-AM-I)
+
+# Echo some nice helptext based on the target comment
+HELPTEXT = $(ECHO) "$(ACTION)--->" `egrep "^\# target: $(1) " $(THIS_MAKEFILE) | sed "s/\# target: $(1)[ ]*-[ ]* / /g"` "$(NO_COLOR)"
+
+
 
 # Add local bin path for test tools
 BIN 		= bin
@@ -16,7 +36,7 @@ VENDORBIN 	= vendor/bin
 NPMBIN		= node_modules/.bin
 
 # LESS and CSS
-LESS 		 	= style.less
+LESS 		 	= light.less color.less
 LESS_MODULES	= modules/
 LESS_OPTIONS 	= --strict-imports --include-path=$(LESS_MODULES)
 CSSLINT_OPTIONS = --quiet
@@ -28,9 +48,9 @@ FONT_AWESOME 	= modules/font-awesome/fonts/
 .PHONY:  help
 help:
 	@$(call HELPTEXT,$@)
-	@echo "Usage:"
-	@echo " make [target] ..."
-	@echo "target:"
+	@$(ECHO) "Usage:"
+	@$(ECHO) " make [target] ..."
+	@$(ECHO) "target:"
 	@egrep "^# target:" Makefile | sed 's/# target: / /g'
 
 
@@ -60,31 +80,35 @@ clean-all: clean
 
 
 
-# target: less               - Compile and minify the stylesheet.
+# target: less               - Compile and minify the stylesheet(s).
 .PHONY: less
 less: prepare-build
 	@$(call HELPTEXT,$@)
-	$(NPMBIN)/lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
-	$(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
-	cp build/css/style*.css htdocs/css/
+	
+	$(foreach file, $(LESS), $(NPMBIN)/lessc $(LESS_OPTIONS) $(file) build/css/$(basename $(file)).css; )
+	$(foreach file, $(LESS), $(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(file) build/css/$(basename $(file)).min.css; )
+
+	cp build/css/*.css htdocs/css/
 
 
 
-# target: less-install       - Installing the stylesheet.
+# target: less-install       - Installing the stylesheet(s).
 .PHONY: less-install
 less-install: less
 	@$(call HELPTEXT,$@)
-	if [ -d ../htdocs/css/ ]; then cp build/css/style.min.css ../htdocs/css/style.min.css; fi
+	if [ -d ../htdocs/css/ ]; then cp build/css/*.min.css ../htdocs/css/; fi
 	if [ -d ../htdocs/js/ ]; then rsync -a js/ ../htdocs/js/; fi
 
 
 
-# target: less-lint          - Lint the less stylesheet.
+# target: less-lint          - Lint the less stylesheet(s).
 .PHONY: less-lint
 less-lint: less
 	@$(call HELPTEXT,$@)
-	$(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
-	$(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
+
+	$(foreach file, $(LESS), $(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(file) > build/lint/$(file); )
+	- $(foreach file, $(LESS), $(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/$(basename $(file)).css > build/lint/$(basename $(file)).css; )
+
 	ls -l build/lint/
 
 

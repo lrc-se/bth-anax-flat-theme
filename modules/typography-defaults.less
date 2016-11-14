@@ -13,8 +13,7 @@ h4,
 h5,
 h6 {
     font-family: @font-family-headings;
-    margin-top: 0;
-    margin-bottom: @line-height;
+    .margins();
 }
 
 h1 {
@@ -36,8 +35,7 @@ h1 {
     & ~ h3 + h4,
     & ~ h4 + h5,
     & ~ h5 + h6 {
-        margin-top: 0;
-        margin-bottom: @line-height;
+        .margins();
     }
 }
 
@@ -68,8 +66,7 @@ hr {
     & + h4,
     & + h5,
     & + h6 {
-        margin-top: 0;
-        margin-bottom: @line-height;
+        .margins();
     }
 }
 
@@ -78,8 +75,7 @@ hr {
  * Text elements
  */
 p {
-    margin-top: 0;
-    margin-bottom: @line-height;
+    .margins();
 }
 
 small,
@@ -153,8 +149,7 @@ pre code {
     overflow: auto;
 }
 pre {
-    margin-top: 0;
-    margin-bottom: @line-height;
+    .margins();
 }
 pre code {
     display: block;
@@ -167,8 +162,7 @@ pre code {
  */
 ul, 
 ol {
-    margin-top: 0;
-    margin-bottom: @line-height;
+    .margins();
     padding-left: 1.5em;
 
     p { 
@@ -191,8 +185,7 @@ ol {
 }
 
 dl {
-    margin-top: 0;
-    margin-bottom: @line-height;
+    .margins();
 }
 dt { 
     font-weight: bold;
@@ -208,7 +201,7 @@ dd {
  * Tables
  */
 table {
-    margin-bottom: @line-height;
+    .margins();
     border-spacing: 0;
 }
 

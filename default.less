@@ -1,0 +1,163 @@
+/**
+ * Default theme.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-bordered.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Basic colors
+@color-text: #2f2820;
+@color-bg: #6f6860;
+@color-bg-main: #f4f4f4;
+@color-link: @color-bg;
+@color-link-hover: @color-med-dark;
+@color-hr: @color-med-light;
+
+// Theme palette
+@color-dark: #4f4840;
+@color-med-dark: #8f8880;
+@color-med-light: #afa8a0;
+@color-light: #cfc8c0;
+
+// Region colors
+@color-header-bg: @color-dark;
+@color-header-link: @color-bg-main;
+@color-header-link-hover: @color-bg-main;
+@color-navbar: @color-bg-main;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-bg;
+@color-navbar-active: @color-dark;
+@color-navbar-active-bg: @color-med-light;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-text;
+@color-menuitem: @color-bg-main;
+@color-menuitem-bg: @color-dark;
+@color-menuitem-active: @color-text;
+@color-menuitem-active-bg: @color-med-light;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-med-light;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-bg;
+@color-aftermain: @color-text;
+@color-aftermain-bg: @color-med-light;
+@color-aftermain-link: @color-dark;
+@color-aftermain-link-hover: @color-bg;
+@color-columnsbelow-bg: @color-med-dark;
+@color-columnsbelow-link: @color-dark;
+@color-columnsbelow-link-hover: @color-bg;
+@color-footer: @color-bg-main;
+@color-footer-bg: @color-dark;
+@color-footer-link: @color-med-light;
+@color-footer-link-hover: @color-med-light;
+
+// Component colors
+@color-border: @color-text;
+@color-notice-bg: @color-med-light;
+@color-notice-border: @color-bg;
+@color-notice-link: @color-dark;
+@color-notice-link-hover: @color-bg;
+@color-code: @color-dark;
+@color-code-bg: @color-light;
+@color-code-border: @color-med-dark;
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+pre code {
+    padding: (@line-height / 2 - 1px) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+    border: 1px solid @color-code-border;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-med-dark;
+    }
+    td {
+        border-bottom-color: @color-light;
+    }
+    tr:last-child td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+.wrap-all {
+    border-color: @color-text;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .75);
+    
+    @media only screen and (max-width: @max-width) {
+        box-shadow: none;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-header {
+    border-bottom-color: @color-text;
+}
+
+.site-logo-text {
+    text-shadow: 2px 2px 1px #000;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-wrap {
+    border-top-color: @color-dark;
+    border-bottom-color: @color-med-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.main.has-sidebar-left {
+    border-left-color: @color-med-light;
+}
+.main.has-sidebar-right {
+    border-right-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    border-top-color: @color-med-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.inner-wrap-columns-below {
+    border-top-color: @color-bg;
+}
+
+.bottom-column {
+    border-left-color: @color-bg;
+}
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.footer {
+    border-top-color: @color-text;
+}

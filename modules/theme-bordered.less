@@ -1,0 +1,84 @@
+/**
+ * Additions for bordered-region themes.
+ */
+
+// Border widths
+@border-wrap-width: 2px;
+@border-region-width: 1px;
+@border-column-width: 1px;
+@border-base-color: @color-text;
+
+
+.wrap-all {
+    margin-top: @line-height;
+    margin-bottom: @line-height;
+    border: @border-wrap-width solid @border-base-color;
+    
+    @media only screen and (max-width: @max-width) {
+        margin: 0;
+        border: none;
+    }
+}
+
+.site-header {
+    border-bottom: @border-region-width solid @border-base-color;
+}
+
+.breadcrumb-wrap {
+    border-top: @border-region-width solid @border-base-color;
+    border-bottom: @border-region-width solid @border-base-color;
+}
+
+.main.has-sidebar-left {
+    border-left: @border-column-width solid @border-base-color;
+}
+.main.has-sidebar-right {
+    border-right: @border-column-width solid @border-base-color;
+}
+
+.after-main {
+    border-top: @border-region-width solid @border-base-color;
+}
+
+.inner-wrap-columns-below {
+    border-top: @border-region-width solid @border-base-color;
+}
+
+.bottom-column {
+    border-left: @border-column-width solid @border-base-color;
+    
+    &:first-child {
+        border-left: none;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        border-left: none;
+    }
+}
+
+.footer {
+    border-top: @border-region-width solid @border-base-color;
+}
+
+
+@media only screen and (max-width: @breakpoint-med) {
+    div.toc {
+        &::after {
+            border-bottom: @border-column-width solid @color-hr;
+        }
+        
+        ul {
+            margin-bottom: -(@border-column-width);
+        }
+    }
+    
+    .main {
+        &.has-sidebar-left {
+            margin-top: @line-height - @border-column-width;
+            border-left: none;
+        }
+        &.has-sidebar-right {
+            border-right: none;
+        }
+    }
+}
