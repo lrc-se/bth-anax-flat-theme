@@ -1,0 +1,174 @@
+/**
+ * Light theme.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-bordered.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Basic colors
+@color-text: #000;
+@color-bg: #eee;
+@color-bg-main: #fff;
+@color-link: @color-med-dark;
+@color-link-hover: @color-dark;
+@color-hr: @color-med-light;
+
+// Theme palette
+@color-dark: #666;
+@color-med-dark: #888;
+@color-med-light: #aaa;
+@color-light: #ddd;
+
+// Region colors
+@color-header-bg: @color-bg-main;
+@color-header-link: @color-text;
+@color-header-link-hover: @color-text;
+@color-navbar: @color-text;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-light;
+@color-navbar-active: @color-bg-main;
+@color-navbar-active-bg: @color-text;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-bg-main;
+@color-menuitem: @color-navbar;
+@color-menuitem-bg: @color-light;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-text;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-bg-main;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-dark;
+@color-aftermain: @color-dark;
+@color-aftermain-bg: @color-bg-main;
+@color-aftermain-link: @color-med-light;
+@color-aftermain-link-hover: @color-med-dark;
+@color-columnsbelow-bg: @color-bg-main;
+@color-columnsbelow-link: @color-link;
+@color-columnsbelow-link-hover: @color-link-hover;
+@color-footer: @color-text;
+@color-footer-bg: @color-bg-main;
+@color-footer-link: @color-link;
+@color-footer-link-hover: @color-link-hover;
+
+// Component colors
+@color-border: @color-dark;
+@color-notice-bg: @color-light;
+@color-notice-border: @color-text;
+@color-notice-link: @color-link;
+@color-notice-link-hover: @color-link-hover;
+@color-code: @color-dark;
+@color-code-bg: @color-bg-main;
+@color-code-border: @color-med-dark;
+
+// Border widths
+@border-region-width: 2px;
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+pre code {
+    padding: (@line-height / 2 - 1px) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+    border: 1px solid @color-code-border;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-med-dark;
+    }
+    
+    td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-logo-text {
+    text-shadow: 2px 2px 1px @color-med-light;
+}
+
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-wrap {
+    border-bottom: none;
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &.selected {
+        a {
+            padding: 0 3px;
+            color: @color-bg-main;
+            background-color: @color-text;
+            display: inline-block;
+            
+            @media only screen and (max-width: @breakpoint-med) {
+                padding: 0 5px;
+            }
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        
+        &::before {
+            color: @color-text;
+            opacity: 1;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.main.has-sidebar-left {
+    border-left-color: @color-med-light;
+}
+.main.has-sidebar-right {
+    border-right-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    border-top-style: dashed;
+    border-top-color: @color-med-dark;
+}
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.bottom-column {
+    border-left-color: @color-med-light;
+}
