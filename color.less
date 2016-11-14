@@ -1,0 +1,68 @@
+/**
+ * Colored variant of the light theme.
+ */
+
+@import url('light.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Basic colors
+@color-text: #20252b;
+@color-bg: #f2f4fa;
+@color-link-hover: @color-link;
+
+// Theme palette
+@color-dark: #3f526f;
+@color-med-dark: #425fa0;
+@color-med-light: #a5b2bb;
+@color-light: #d0dff8;
+@color-accent: #24c;
+
+// Region colors
+@color-navbar-active-bg: @color-accent;
+@color-aftermain-link: @color-link;
+@color-aftermain-link-hover: @color-link-hover;
+@color-menuitem-active-bg: @color-accent;
+
+// Component colors
+@color-notice-border: @color-dark;
+
+
+/** --------------------------------------------------------------
+ *  Global element styles
+ */
+code {
+    color: @color-dark;
+}
+
+blockquote {
+    color: @color-dark;
+    
+    &::before {
+        color: @color-accent;
+        opacity: .9;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    &::before {
+        opacity: .6;
+    }
+    
+    &.selected {
+        a,
+        a:hover {
+            background-color: @color-accent;
+        }
+        
+        &::before {
+            color: @color-accent;
+        }
+    }
+}
