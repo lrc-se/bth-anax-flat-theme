@@ -1,0 +1,214 @@
+/**
+ * Dark theme.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-bordered.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-dark: #000;
+@color-med-dark: #666;
+@color-med-light: #aaa;
+@color-light: #f8f8f8;
+@color-primary: #1fb24d;
+@color-accent: #b22d2b;
+
+// Basic colors
+@color-text: @color-light;
+@color-bg: @color-dark;
+@color-bg-main: @color-dark;
+@color-link: @color-primary;
+@color-link-hover: @color-accent;
+@color-hr: @color-accent;
+
+// Region colors
+@color-header-bg: @color-bg;
+@color-header-link: @color-text;
+@color-header-link-hover: @color-text;
+@color-navbar: @color-link;
+@color-navbar-hover: @color-accent;
+@color-navbar-hover-bg: @color-bg;
+@color-navbar-active: @color-light;
+@color-navbar-active-bg: @color-accent;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-header-bg;
+@color-menuitem: @color-navbar;
+@color-menuitem-bg: @color-menu-bg;
+@color-menuitem-active: @color-navbar-active;
+@color-menuitem-active-bg: @color-navbar-active-bg;
+@color-breadcrumb: @color-accent;
+@color-breadcrumb-bg: @color-bg-main;
+@color-breadcrumb-link: @color-link;
+@color-breadcrumb-link-hover: @color-link-hover;
+@color-aftermain: @color-text;
+@color-aftermain-bg: @color-bg-main;
+@color-aftermain-link: @color-link;
+@color-aftermain-link-hover: @color-link-hover;
+@color-columnsbelow-bg: @color-bg-main;
+@color-columnsbelow-link: @color-link;
+@color-columnsbelow-link-hover: @color-link-hover;
+@color-footer: @color-text;
+@color-footer-bg: @color-bg-main;
+@color-footer-link: @color-link;
+@color-footer-link-hover: @color-link-hover;
+
+// Component colors
+@color-border: @color-med-light;
+@color-notice-bg: @color-bg-main;
+@color-notice-border: @color-accent;
+@color-notice-link: @color-link;
+@color-notice-link-hover: @color-link-hover;
+@color-code: @color-med-light;
+@color-code-bg: @color-bg-main;
+@color-code-border: @color-med-light;
+
+// Border widths
+@border-region-width: 2px;
+
+
+/** --------------------------------------------------------------
+ *  Global element styles
+ */
+blockquote {
+    color: @color-med-dark;
+    
+    &::before {
+        color: @color-accent;
+        opacity: .9;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.palette li {
+    color: @color-bg-main;
+    
+    &.inv {
+        color: @color-text;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+pre code {
+    padding: (@line-height / 2 - 1px) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+    border: 1px solid @color-code-border;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-text;
+    }
+    
+    td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.rm-max .rm-mobile {
+    border-left-color: @color-med-dark;
+}
+
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-wrap {
+    border-bottom: none;
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc {
+    &::after {
+        border-bottom-color: @color-med-light;
+    }
+    
+    li {
+        a {
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        &::before {
+            color: @color-med-light;
+            opacity: 1;
+        }
+        
+        
+        &.selected {
+            a {
+                padding: 0 3px;
+                color: @color-bg-main;
+                background-color: @color-accent;
+                display: inline-block;
+                
+                @media only screen and (max-width: @breakpoint-med) {
+                    padding: 0 5px;
+                }
+                
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
+            &::before {
+                color: @color-accent;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.main.has-sidebar-left {
+    border-left-color: @color-med-light;
+}
+.main.has-sidebar-right {
+    border-right-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    border-top-style: dotted;
+    border-top-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.bottom-column {
+    border-left-color: @color-med-light;
+}

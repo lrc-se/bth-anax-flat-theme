@@ -859,7 +859,7 @@ div.toc li.selected::before {
 }
 @media only screen and (max-width: 815px) {
   div.toc::after {
-    border-bottom: 1px solid #afa8a0;
+    border-bottom: 1px solid #2f2820;
   }
   div.toc ul {
     margin-bottom: -1px;
