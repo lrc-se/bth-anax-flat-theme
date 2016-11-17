@@ -142,7 +142,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #46f;
+  color: #00f;
 }
 img {
   max-width: 100%;
@@ -163,58 +163,6 @@ blockquote::before {
 }
 hr {
   border-top-color: #000;
-}
-/** --------------------------------------------------------------
- *  Global styles
- */
-.border {
-  border: 1px solid #000;
-}
-.notice {
-  padding: 10px 1em;
-  background-color: #fff;
-  border: 1px solid #000;
-}
-.notice a {
-  color: #00f;
-}
-.notice a:hover {
-  color: #46f;
-}
-.table th,
-.table td {
-  padding: 11px 1.5em 10px 0;
-  border-bottom: 1px solid;
-}
-.table th:last-child,
-.table td:last-child {
-  padding-right: .5em;
-}
-.palette {
-  margin-left: 0;
-  padding: 0;
-  list-style-type: none;
-  counter-reset: palette;
-  overflow: auto;
-}
-.palette li {
-  float: left;
-  width: 1.75em;
-  margin: 2px 4px 2px 0;
-  border: 1px solid #000;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 38px;
-  text-align: center;
-  display: block;
-  cursor: cell;
-  counter-increment: palette;
-}
-.palette li.inv {
-  color: #fff;
-}
-.palette li::before {
-  content: counter(palette);
 }
 /** --------------------------------------------------------------
  *  Header
@@ -314,7 +262,7 @@ hr {
   text-decoration: none;
 }
 .breadcrumb-list ul li a:hover {
-  color: #46f;
+  color: #00f;
   text-decoration: underline;
 }
 /** --------------------------------------------------------------
@@ -342,6 +290,12 @@ div.toc ul {
   position: relative;
   padding: 0 0 0 1em;
   list-style-type: none;
+}
+div.toc li a:visited {
+  color: #808;
+}
+div.toc li a:visited:hover {
+  color: #808;
 }
 div.toc li::before {
   content: "›";
@@ -376,6 +330,12 @@ div.toc li.selected::before {
     padding-right: 1em;
   }
 }
+.main a:visited {
+  color: #808;
+}
+.main a:visited:hover {
+  color: #808;
+}
 .article > p:last-child {
   margin-bottom: 0;
 }
@@ -394,7 +354,7 @@ div.toc li.selected::before {
   color: #00f;
 }
 .after-main a:hover {
-  color: #46f;
+  color: #00f;
 }
 .byline {
   padding: 11px 0;
@@ -428,7 +388,13 @@ div.toc li.selected::before {
   color: #00f;
 }
 .columns-below a:hover {
-  color: #46f;
+  color: #808;
+}
+.columns-below a:visited {
+  color: #808;
+}
+.columns-below a:visited:hover {
+  color: #808;
 }
 .bottom-column {
   margin-top: 11px;
@@ -452,7 +418,65 @@ div.toc li.selected::before {
   color: #00f;
 }
 .footer a:hover {
-  color: #46f;
+  color: #00f;
+}
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.border {
+  border: 1px solid #000;
+}
+.notice {
+  padding: 10px 1em;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.notice a {
+  color: #00f;
+}
+.notice a:hover {
+  color: #00f;
+}
+.notice a:visited {
+  color: #808;
+}
+.notice a:visited:hover {
+  color: #808;
+}
+.table th,
+.table td {
+  padding: 11px 1.5em 10px 0;
+  border-bottom: 1px solid;
+}
+.table th:last-child,
+.table td:last-child {
+  padding-right: .5em;
+}
+.palette {
+  margin-left: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: palette;
+  overflow: auto;
+}
+.palette li {
+  float: left;
+  width: 1.75em;
+  margin: 2px 4px 2px 0;
+  border: 1px solid #000;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+  display: block;
+  cursor: cell;
+  counter-increment: palette;
+}
+.palette li.inv {
+  color: #fff;
+}
+.palette li::before {
+  content: counter(palette);
 }
 /** --------------------------------------------------------------
  *  Responsive

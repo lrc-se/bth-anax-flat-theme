@@ -11,19 +11,23 @@
 /** --------------------------------------------------------------
  *  Colors
  */
-// Basic colors
-@color-text: #2f2820;
-@color-bg: #6f6860;
-@color-bg-main: #f4f4f4;
-@color-link: @color-bg;
-@color-link-hover: @color-med-dark;
-@color-hr: @color-med-light;
-
 // Theme palette
+@color-standard: #2f2820;
 @color-dark: #4f4840;
-@color-med-dark: #8f8880;
+@color-med-dark: #6f6860;
+@color-med: #8f8880;
 @color-med-light: #afa8a0;
 @color-light: #cfc8c0;
+
+// Basic colors
+@color-text: @color-standard;
+@color-bg: #cbc8c4;
+@color-bg-main: #f4f4f4;
+@color-link: #94683c;
+@color-link-visited: @color-med-dark;
+@color-link-hover: darken(@color-link, 5%);
+@color-link-visited-hover: darken(@color-link-visited, 5%);
+@color-hr: @color-med-light;
 
 // Region colors
 @color-header-bg: @color-dark;
@@ -31,7 +35,7 @@
 @color-header-link-hover: @color-bg-main;
 @color-navbar: @color-bg-main;
 @color-navbar-hover: @color-navbar;
-@color-navbar-hover-bg: @color-bg;
+@color-navbar-hover-bg: @color-med-dark;
 @color-navbar-active: @color-dark;
 @color-navbar-active-bg: @color-med-light;
 @color-menu-close: @color-navbar;
@@ -43,14 +47,16 @@
 @color-breadcrumb: @color-dark;
 @color-breadcrumb-bg: @color-med-light;
 @color-breadcrumb-link: @color-dark;
-@color-breadcrumb-link-hover: @color-bg;
+@color-breadcrumb-link-hover: @color-dark;
 @color-aftermain: @color-text;
 @color-aftermain-bg: @color-med-light;
-@color-aftermain-link: @color-dark;
-@color-aftermain-link-hover: @color-bg;
-@color-columnsbelow-bg: @color-med-dark;
+@color-aftermain-link: @color-link-hover;
+@color-aftermain-link-hover: @color-link-hover;
+@color-columnsbelow-bg: @color-med;
 @color-columnsbelow-link: @color-dark;
-@color-columnsbelow-link-hover: @color-bg;
+@color-columnsbelow-link-visited: @color-text;
+@color-columnsbelow-link-hover: @color-dark;
+@color-columnsbelow-link-visited-hover: @color-text;
 @color-footer: @color-bg-main;
 @color-footer-bg: @color-dark;
 @color-footer-link: @color-med-light;
@@ -59,12 +65,14 @@
 // Component colors
 @color-border: @color-text;
 @color-notice-bg: @color-med-light;
-@color-notice-border: @color-bg;
-@color-notice-link: @color-dark;
-@color-notice-link-hover: @color-bg;
+@color-notice-border: @color-med-dark;
+@color-notice-link: @color-link-hover;
+@color-notice-link-visited: @color-link-visited-hover;
+@color-notice-link-hover: @color-notice-link;
+@color-notice-link-visited-hover: @color-notice-link-visited;
 @color-code: @color-dark;
 @color-code-bg: @color-light;
-@color-code-border: @color-med-dark;
+@color-code-border: @color-med;
 
 
 /** --------------------------------------------------------------
@@ -79,7 +87,7 @@ pre code {
 
 .table {
     th {
-        border-bottom-color: @color-med-dark;
+        border-bottom-color: @color-med;
     }
     td {
         border-bottom-color: @color-light;
@@ -120,7 +128,7 @@ pre code {
  */
 .breadcrumb-wrap {
     border-top-color: @color-dark;
-    border-bottom-color: @color-med-dark;
+    border-bottom-color: @color-med;
 }
 
 
@@ -139,7 +147,7 @@ pre code {
  *  After-Main
  */
 .after-main {
-    border-top-color: @color-med-dark;
+    border-top-color: @color-med;
 }
 
 
@@ -147,11 +155,11 @@ pre code {
  *  Columns-Below
  */
 .inner-wrap-columns-below {
-    border-top-color: @color-bg;
+    border-top-color: @color-med-dark;
 }
 
 .bottom-column {
-    border-left-color: @color-bg;
+    border-left-color: @color-med-dark;
 }
 
 
