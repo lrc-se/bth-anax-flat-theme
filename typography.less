@@ -1,0 +1,241 @@
+/**
+ * Typographically unique variant of the colorful theme.
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Philosopher:400,400i,700,700i');
+@import url('colorful.less');
+
+// Colors
+@color-hr: @color-secondary1-lighter;
+@color-code: @color-secondary2-dark;
+@color-code-bg: #fff;
+@color-code-border: @color-secondary2;
+
+// Grid visualization
+.route-typography .wrap-all:hover,
+.grid-horiz .wrap-all {
+    .inner-wrap-main {
+        background-image: url('../img/grid/horizontal-grid-24.png');
+    }
+}
+.grid-horiz-top .wrap-all {
+    &::after {
+        background-image: url('../img/grid/horizontal-grid-24.png');
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+@line-height: 24px;
+@base-font-size: 17px;
+@base-font-size2: 15px;
+@font-family-body: Philosopher, @font-family-arial;
+@font-family-headings: "Abril Fatface", Impact, @font-family-arial;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul {
+    padding-left: 2em;
+    list-style-type: circle;
+}
+
+ol {
+    padding-left: 2em;
+}
+
+dd {
+    position: relative;
+    margin-left: 0;
+    padding-left: 1.5em;
+    
+    &::before {
+        content: "―";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: @color-secondary1-lighter;
+    }
+}
+
+blockquote {
+    margin-left: 1.5em;
+    padding-left: 3em;
+    color: @color-grey-dark;
+    border-left: 3px solid @color-primary;
+    
+    &::before {
+        left: .25em;
+        top: -.3em;
+        color: @color-secondary2-dark;
+        font-size: 3.5em;
+        opacity: 1;
+    }
+}
+
+pre code {
+    padding: (@line-height / 2 - 2px) 1em;
+    color: @color-code;
+    border: 2px solid @color-code-border;
+    border-radius: 15px 0 30px 0;
+}
+
+td,
+th {
+    padding-right: 1.5em;
+}
+
+.table {
+    th,
+    td {
+        padding-left: 1em;
+        padding-right: 1em;
+        color: @color-grey-lighter;
+        background-color: @color-grey-darker;
+
+        &:first-child {
+            border-left: 2px solid @color-secondary2;
+        }
+        
+        &:last-child {
+            padding-right: 1em;
+            border-right: 2px solid @color-secondary1;
+        }
+    }
+    
+    th {
+        background-color: @color-primary;
+        border-bottom-color: @color-primary-darker;
+    }
+    
+    td {
+        border-bottom-color: @color-grey;
+        
+    }
+    
+    thead tr:first-child {
+        th,
+        td {
+            padding-top: @line-height / 2 - 2px;
+            border-top: 2px solid @color-secondary2;
+            
+            &:first-child {
+                border-top-left-radius: 15px;
+            }
+        }
+    }
+    
+    tbody tr:last-child {
+        th,
+        td {
+            padding-bottom: @line-height / 2 - 2px;
+            border-bottom: 2px solid @color-secondary1;
+            
+            &:last-child {
+                border-bottom-right-radius: 30px;
+            }
+        }
+    }
+}
+
+hr {
+    position: relative;
+    height: @line-height;
+    margin-top: 0;
+    border: none;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 50%;
+        height: @line-height;
+        border-top: 2px solid @color-hr;
+        border-top-left-radius: 15px;
+        display: block;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -50%;
+        width: 50%;
+        height: @line-height;
+        border-bottom: 2px solid @color-hr;
+        border-bottom-right-radius: 30px;
+        display: block;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-logo-text {
+    font-weight: normal;
+    text-shadow: 2px 2px 1px @color-grey-darker;
+}
+
+.rm-navbar {
+    font-family: @font-family-body;
+}
+
+.rm-desktop {
+    li a {
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list ul {
+    &::before {
+        content: "// ";
+    }
+    
+    li {
+        &::after {
+            content: " /";
+        }
+        &:last-child::after {
+            display: none;
+        }
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    &::before {
+        content: "/";
+    }
+    
+    &.selected {
+        &::before {
+            content: "//";
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.notice,
+.border {
+    border-radius: 10px 0 20px 0;
+}
