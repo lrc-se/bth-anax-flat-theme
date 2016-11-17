@@ -402,58 +402,6 @@ hr {
   border-top-color: #b22d2b;
 }
 /** --------------------------------------------------------------
- *  Global styles
- */
-.border {
-  border: 1px solid #aaa;
-}
-.notice {
-  padding: 10px 1em;
-  background-color: #000;
-  border: 1px solid #b22d2b;
-}
-.notice a {
-  color: #1fb24d;
-}
-.notice a:hover {
-  color: #b22d2b;
-}
-.table th,
-.table td {
-  padding: 11px 1.5em 10px 0;
-  border-bottom: 1px solid;
-}
-.table th:last-child,
-.table td:last-child {
-  padding-right: .5em;
-}
-.palette {
-  margin-left: 0;
-  padding: 0;
-  list-style-type: none;
-  counter-reset: palette;
-  overflow: auto;
-}
-.palette li {
-  float: left;
-  width: 1.75em;
-  margin: 2px 4px 2px 0;
-  border: 1px solid #f8f8f8;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 38px;
-  text-align: center;
-  display: block;
-  cursor: cell;
-  counter-increment: palette;
-}
-.palette li.inv {
-  color: #000;
-}
-.palette li::before {
-  content: counter(palette);
-}
-/** --------------------------------------------------------------
  *  Header
  */
 .site-header {
@@ -580,6 +528,12 @@ div.toc ul {
   padding: 0 0 0 1em;
   list-style-type: none;
 }
+div.toc li a:visited {
+  color: #32854c;
+}
+div.toc li a:visited:hover {
+  color: #9c4241;
+}
 div.toc li::before {
   content: "›";
   position: absolute;
@@ -612,6 +566,12 @@ div.toc li.selected::before {
     padding-left: 1em;
     padding-right: 1em;
   }
+}
+.main a:visited {
+  color: #32854c;
+}
+.main a:visited:hover {
+  color: #9c4241;
 }
 .article > p:last-child {
   margin-bottom: 0;
@@ -667,6 +627,12 @@ div.toc li.selected::before {
 .columns-below a:hover {
   color: #b22d2b;
 }
+.columns-below a:visited {
+  color: #32854c;
+}
+.columns-below a:visited:hover {
+  color: #9c4241;
+}
 .bottom-column {
   margin-top: 11px;
   margin-bottom: 11px;
@@ -690,6 +656,64 @@ div.toc li.selected::before {
 }
 .footer a:hover {
   color: #b22d2b;
+}
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.border {
+  border: 1px solid #aaa;
+}
+.notice {
+  padding: 10px 1em;
+  background-color: #000;
+  border: 1px solid #b22d2b;
+}
+.notice a {
+  color: #1fb24d;
+}
+.notice a:hover {
+  color: #b22d2b;
+}
+.notice a:visited {
+  color: #32854c;
+}
+.notice a:visited:hover {
+  color: #9c4241;
+}
+.table th,
+.table td {
+  padding: 11px 1.5em 10px 0;
+  border-bottom: 1px solid;
+}
+.table th:last-child,
+.table td:last-child {
+  padding-right: .5em;
+}
+.palette {
+  margin-left: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: palette;
+  overflow: auto;
+}
+.palette li {
+  float: left;
+  width: 1.75em;
+  margin: 2px 4px 2px 0;
+  border: 1px solid #f8f8f8;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: center;
+  display: block;
+  cursor: cell;
+  counter-increment: palette;
+}
+.palette li.inv {
+  color: #000;
+}
+.palette li::before {
+  content: counter(palette);
 }
 /** --------------------------------------------------------------
  *  Responsive
@@ -881,6 +905,9 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Global element styles
  */
+code {
+  color: #b22d2b;
+}
 blockquote {
   color: #666;
 }
@@ -955,6 +982,7 @@ div.toc li.selected a {
   }
 }
 div.toc li.selected a:hover {
+  color: #000;
   text-decoration: none;
 }
 div.toc li.selected::before {

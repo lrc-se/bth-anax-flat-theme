@@ -24,7 +24,9 @@
 @color-bg: @color-dark;
 @color-bg-main: @color-dark;
 @color-link: @color-primary;
+@color-link-visited: darken(desaturate(@color-primary, 25%), 5%);
 @color-link-hover: @color-accent;
+@color-link-visited-hover: desaturate(@color-accent, 20%);
 @color-hr: @color-accent;
 
 // Region colors
@@ -52,7 +54,9 @@
 @color-aftermain-link-hover: @color-link-hover;
 @color-columnsbelow-bg: @color-bg-main;
 @color-columnsbelow-link: @color-link;
+@color-columnsbelow-link-visited: @color-link-visited;
 @color-columnsbelow-link-hover: @color-link-hover;
+@color-columnsbelow-link-visited-hover: @color-link-visited-hover;
 @color-footer: @color-text;
 @color-footer-bg: @color-bg-main;
 @color-footer-link: @color-link;
@@ -75,6 +79,10 @@
 /** --------------------------------------------------------------
  *  Global element styles
  */
+code {
+    color: @color-accent;
+}
+
 blockquote {
     color: @color-med-dark;
     
@@ -173,6 +181,7 @@ div.toc {
                 }
                 
                 &:hover {
+                    color: @color-bg-main;
                     text-decoration: none;
                 }
             }
