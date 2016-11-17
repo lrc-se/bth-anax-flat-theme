@@ -52,6 +52,7 @@
 
 // Component colors
 @color-border: @color-text;
+@color-notice: @color-text;
 @color-notice-bg: @color-bg;
 @color-notice-border: @color-text;
 @color-notice-link: @color-link;
@@ -326,7 +327,6 @@ div.toc li {
 .main {
     min-height: @line-height * 20;
     .content-spacing();
-    
     .link-visited(@color-link-visited, @color-link-visited-hover);
 }
 
@@ -446,6 +446,7 @@ div.toc li {
 
 .notice {
     padding: (@line-height / 2 - 1px) 1em;
+    color: @color-notice;
     background-color: @color-notice-bg;
     border: 1px solid @color-notice-border;
     
@@ -454,6 +455,8 @@ div.toc li {
 }
 
 .table {
+    overflow-x: auto;
+    
     th,
     td {
         padding: (@line-height / 2) 1.5em (@line-height / 2 - 1px) 0;
