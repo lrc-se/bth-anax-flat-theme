@@ -1,7 +1,7 @@
 /**
  * Typographically unique variant of the colorful theme.
  */
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Philosopher:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Anonymous+Pro:400,700|Philosopher:400,400i,700,700i');
 /**
  * Colorful theme (triadic).
  */
@@ -23,12 +23,12 @@ h6 {
   margin-bottom: 24px;
 }
 h1 {
-  font-size: 2.25em;
-  line-height: 1.25490196;
+  font-size: 2.75em;
+  line-height: 1.02673797;
 }
 @media only screen and (max-width: 639px) {
   h1 {
-    line-height: 1.42222222;
+    line-height: 1.16363636;
   }
 }
 h1 ~ h2,
@@ -48,48 +48,48 @@ h1 ~ h5 + h6 {
   margin-bottom: 24px;
 }
 h2 {
-  font-size: 1.75em;
-  line-height: 1.61344538;
+  font-size: 2em;
+  line-height: 1.41176471;
 }
 @media only screen and (max-width: 639px) {
   h2 {
-    line-height: 1.82857143;
+    line-height: 1.6;
   }
 }
 h3 {
+  font-size: 1.5em;
+  line-height: 1.88235294;
+}
+@media only screen and (max-width: 639px) {
+  h3 {
+    line-height: 1.06666667;
+  }
+}
+h4 {
   font-size: 1.25em;
   line-height: 1.12941176;
 }
 @media only screen and (max-width: 639px) {
-  h3 {
+  h4 {
     line-height: 1.28;
   }
 }
-h4 {
+h5 {
   font-size: 1.125em;
   line-height: 1.25490196;
 }
 @media only screen and (max-width: 639px) {
-  h4 {
+  h5 {
     line-height: 1.42222222;
   }
 }
-h5 {
+h6 {
   font-size: 1em;
   line-height: 1.41176471;
 }
 @media only screen and (max-width: 639px) {
-  h5 {
-    line-height: 1.6;
-  }
-}
-h6 {
-  font-size: 0.875em;
-  line-height: 1.61344538;
-}
-@media only screen and (max-width: 639px) {
   h6 {
-    line-height: 1.82857143;
+    line-height: 1.6;
   }
 }
 hr + h1,
@@ -159,7 +159,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: "Courier New", Courier, monospace, monospace;
+  font-family: "Anonymous Pro", "Courier New", Courier, monospace, monospace;
   line-height: 1em;
 }
 pre,
@@ -964,6 +964,15 @@ div.toc li.selected::before {
   opacity: 1;
 }
 /** --------------------------------------------------------------
+ *  Main
+ */
+@media only screen and (min-width: 640px) {
+  .article > p:last-child,
+  .next-previous {
+    margin-bottom: 24px;
+  }
+}
+/** --------------------------------------------------------------
  *  Global styles
  */
 .notice {
@@ -1001,7 +1010,7 @@ dd {
   padding-left: 1.5em;
 }
 dd::before {
-  content: "―";
+  content: "►";
   position: absolute;
   left: 0;
   top: 0;
@@ -1103,6 +1112,7 @@ hr::after {
  *  Header
  */
 .site-logo-text {
+  color: #fff;
   font-weight: normal;
   text-shadow: 2px 2px 1px #222;
 }
