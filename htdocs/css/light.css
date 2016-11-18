@@ -371,6 +371,10 @@ body {
 .wrap-all {
   overflow: hidden;
 }
+article,
+section {
+  counter-reset: section;
+}
 /** --------------------------------------------------------------
  *  Global element styles
  */
@@ -665,6 +669,7 @@ div.toc li.selected::before {
 }
 .notice {
   padding: 10px 1em;
+  color: #000;
   background-color: #ddd;
   border: 1px solid #000;
 }
@@ -679,6 +684,9 @@ div.toc li.selected::before {
 }
 .notice a:visited:hover {
   color: #666;
+}
+.table {
+  overflow-x: auto;
 }
 .table th,
 .table td {
@@ -715,14 +723,24 @@ div.toc li.selected::before {
 .palette li::before {
   content: counter(palette);
 }
+.section-heading {
+  counter-increment: section;
+  counter-reset: subsection;
+}
+.section-heading::before {
+  content: counter(section);
+  margin-right: .5em;
+}
+.subsection-heading {
+  counter-increment: subsection;
+}
+.subsection-heading::before {
+  content: counter(section) "." counter(subsection);
+  margin-right: .5em;
+}
 /** --------------------------------------------------------------
  *  Responsive
  */
-@media only screen and (max-width: 1100px) {
-  body {
-    background-color: #fff;
-  }
-}
 @media only screen and (max-width: 911px) {
   .navbar2 {
     display: none;
@@ -880,6 +898,11 @@ div.toc li.selected::before {
 }
 .footer {
   border-top: 2px solid #000;
+}
+@media only screen and (max-width: 1100px) {
+  body {
+    background-color: #fff;
+  }
 }
 @media only screen and (max-width: 815px) {
   div.toc::after {
