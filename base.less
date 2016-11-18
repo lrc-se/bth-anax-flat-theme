@@ -87,11 +87,9 @@
         .show-grid();
     }
 }
-.route-typography .wrap-all:hover,
-.grid-horiz .wrap-all {
-    .inner-wrap-main {
-        .show-baseline-grid();
-    }
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
+    .show-baseline-grid();
 }
 .grid-horiz-top .wrap-all {
     position: relative;
@@ -170,6 +168,14 @@ hr {
     border-top-color: @color-hr;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+}
+
 
 /** --------------------------------------------------------------
  *  Header
@@ -180,7 +186,8 @@ hr {
     font-family: @font-family-headings;
     overflow: hidden;
     
-    a, a:hover {
+    a,
+    a:hover {
         color: @color-header-link;
         text-decoration: none;
     }
