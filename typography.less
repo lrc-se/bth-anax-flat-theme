@@ -12,11 +12,9 @@
 @color-code-border: @color-secondary2;
 
 // Grid visualization
-.route-typography .wrap-all:hover,
-.grid-horiz .wrap-all {
-    .inner-wrap-main {
-        background-image: url('../img/grid/horizontal-grid-24.png');
-    }
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
+    background-image: url('../img/grid/horizontal-grid-24.png');
 }
 .grid-horiz-top .wrap-all {
     &::after {
@@ -83,9 +81,9 @@ blockquote {
     
     &::before {
         left: .25em;
-        top: -.3em;
+        top: -(@line-height * .75);
         color: @color-secondary2-dark;
-        font-size: 3.5em;
+        font-size: 3.5rem;  // using rem as a quick-fix for IE precedence bug (http://stackoverflow.com/questions/27412529/internet-explorer-strange-font-size-behaviour-with-after-and-afterhover-pseu)
         opacity: 1;
     }
 }
@@ -248,4 +246,22 @@ div.toc li {
 .notice,
 .border {
     border-radius: 10px 0 20px 0;
+}
+
+
+/** --------------------------------------------------------------
+ *  Responsive
+ */
+@media only screen and (max-width: @breakpoint-menu) {
+    .rm-max.rm-navbar,
+    .rm-max .rm-small .rm-button.rm-clicked {
+        top: 7px;
+    }
+}
+
+@media only screen and (max-width: @breakpoint-small) {
+    .rm-max.rm-navbar,
+    .rm-max .rm-small .rm-button.rm-clicked {
+        top: 9px;
+    }
 }

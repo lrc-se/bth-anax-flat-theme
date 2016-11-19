@@ -22,6 +22,7 @@
 @color-header-bg: @color-bg;
 @color-header-link: @color-text;
 @color-navbar: @color-text;
+@color-navbar-bg: @color-header-bg;
 @color-navbar-hover: @color-text;
 @color-navbar-hover-bg: @color-bg;
 @color-navbar-active: @color-bg;
@@ -43,7 +44,7 @@
 @color-columnsbelow-bg: @color-bg;
 @color-columnsbelow-link: @color-link;
 @color-columnsbelow-link-visited: @color-link-visited;
-@color-columnsbelow-link-hover: @color-link-visited;
+@color-columnsbelow-link-hover: @color-link-hover;
 @color-columnsbelow-link-visited-hover: @color-link-visited-hover;
 @color-footer: @color-text;
 @color-footer-bg: @color-bg;
@@ -173,7 +174,12 @@ input,
 optgroup,
 select,
 textarea {
+    color: @color-text;
     font-family: inherit;
+}
+
+legend {
+    padding: 0 .25em;
 }
 
 
@@ -219,6 +225,7 @@ textarea {
         a {
             padding: (@line-height / 2) 1em;
             color: @color-navbar;
+            background-color: @color-navbar-bg;
             
             &:hover {
                 color: @color-navbar-hover;
@@ -617,7 +624,7 @@ div.toc li {
 }
 
 @media only screen and (max-width: @breakpoint-small) {
-    body {
+    html {
         font-size: @base-font-size2;
     }
     

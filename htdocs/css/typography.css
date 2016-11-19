@@ -337,8 +337,8 @@ hr {
     background-size: 1100px auto;
   }
 }
-.route-typography .wrap-all:hover .inner-wrap-main,
-.grid-horiz .wrap-all .inner-wrap-main {
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
   background-image: url('../img/grid/horizontal-grid-22.png');
 }
 .grid-horiz-top .wrap-all {
@@ -409,6 +409,17 @@ blockquote::before {
 hr {
   border-top-color: #346e91;
 }
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: #222;
+  font-family: inherit;
+}
+legend {
+  padding: 0 .25em;
+}
 /** --------------------------------------------------------------
  *  Header
  */
@@ -446,6 +457,7 @@ hr {
 .rm-desktop li a {
   padding: 12px 1em;
   color: #eee;
+  background-color: #912100;
 }
 .rm-desktop li a:hover {
   color: #eee;
@@ -820,7 +832,7 @@ div.toc li.selected::before {
   }
 }
 @media only screen and (max-width: 639px) {
-  body {
+  html {
     font-size: 15px;
   }
   .site-logo-text {
@@ -890,7 +902,8 @@ div.toc li.selected::before {
 .main {
   padding-left: 1em;
 }
-.sidebar-right {
+.sidebar-right,
+.main {
   padding-right: 1em;
 }
 @media only screen and (max-width: 815px) {
@@ -979,8 +992,8 @@ div.toc li.selected::before {
   padding: 12px 1em;
   border: none;
 }
-.route-typography .wrap-all:hover .inner-wrap-main,
-.grid-horiz .wrap-all .inner-wrap-main {
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
   background-image: url('../img/grid/horizontal-grid-24.png');
 }
 .grid-horiz-top .wrap-all::after {
@@ -1024,9 +1037,9 @@ blockquote {
 }
 blockquote::before {
   left: .25em;
-  top: -0.3em;
+  top: -18px;
   color: #468300;
-  font-size: 3.5em;
+  font-size: 3.5rem;
   opacity: 1;
 }
 pre code {
@@ -1150,4 +1163,19 @@ div.toc li.selected::before {
 .notice,
 .border {
   border-radius: 10px 0 20px 0;
+}
+/** --------------------------------------------------------------
+ *  Responsive
+ */
+@media only screen and (max-width: 911px) {
+  .rm-max.rm-navbar,
+  .rm-max .rm-small .rm-button.rm-clicked {
+    top: 7px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .rm-max.rm-navbar,
+  .rm-max .rm-small .rm-button.rm-clicked {
+    top: 9px;
+  }
 }

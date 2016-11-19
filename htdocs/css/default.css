@@ -333,8 +333,8 @@ hr {
     background-size: 1100px auto;
   }
 }
-.route-typography .wrap-all:hover .inner-wrap-main,
-.grid-horiz .wrap-all .inner-wrap-main {
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
   background-image: url('../img/grid/horizontal-grid-22.png');
 }
 .grid-horiz-top .wrap-all {
@@ -405,6 +405,17 @@ blockquote::before {
 hr {
   border-top-color: #afa8a0;
 }
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: #2f2820;
+  font-family: inherit;
+}
+legend {
+  padding: 0 .25em;
+}
 /** --------------------------------------------------------------
  *  Header
  */
@@ -442,6 +453,7 @@ hr {
 .rm-desktop li a {
   padding: 11px 1em;
   color: #f4f4f4;
+  background-color: #4f4840;
 }
 .rm-desktop li a:hover {
   color: #f4f4f4;
@@ -816,7 +828,7 @@ div.toc li.selected::before {
   }
 }
 @media only screen and (max-width: 639px) {
-  body {
+  html {
     font-size: 15px;
   }
   .site-logo-text {

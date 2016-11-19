@@ -336,8 +336,8 @@ hr {
     background-size: 1100px auto;
   }
 }
-.route-typography .wrap-all:hover .inner-wrap-main,
-.grid-horiz .wrap-all .inner-wrap-main {
+.route-typography .inner-wrap-main:hover,
+.grid-horiz .inner-wrap-main {
   background-image: url('../img/grid/horizontal-grid-22.png');
 }
 .grid-horiz-top .wrap-all {
@@ -408,6 +408,17 @@ blockquote::before {
 hr {
   border-top-color: #a5b2bb;
 }
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: #20252b;
+  font-family: inherit;
+}
+legend {
+  padding: 0 .25em;
+}
 /** --------------------------------------------------------------
  *  Header
  */
@@ -445,6 +456,7 @@ hr {
 .rm-desktop li a {
   padding: 11px 1em;
   color: #20252b;
+  background-color: #fff;
 }
 .rm-desktop li a:hover {
   color: #20252b;
@@ -680,7 +692,7 @@ div.toc li.selected::before {
   color: #5274b6;
 }
 .notice a:hover {
-  color: #3f527f;
+  color: #5274b6;
 }
 .notice a:visited {
   color: #3f527f;
@@ -819,7 +831,7 @@ div.toc li.selected::before {
   }
 }
 @media only screen and (max-width: 639px) {
-  body {
+  html {
     font-size: 15px;
   }
   .site-logo-text {
@@ -928,6 +940,17 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Colors
  */
+/*@color-columnsbelow-link: @color-link;
+@color-columnsbelow-link-visited: @color-link-visited;
+@color-columnsbelow-link-hover: @color-link-hover;
+@color-columnsbelow-link-visited-hover: @color-link-visited-hover;
+@color-footer: @color-text;*/
+/*@color-footer-link: @color-link;
+@color-footer-link-hover: @color-link-hover;*/
+/*@color-notice-link: @color-link;
+@color-notice-link-visited: @color-link-visited;
+@color-notice-link-hover: @color-link-hover;
+@color-notice-link-hover: @color-link-visited-hover;*/
 /** --------------------------------------------------------------
  *  Typography
  */
