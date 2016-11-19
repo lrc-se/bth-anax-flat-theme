@@ -619,7 +619,7 @@ div.toc li.selected::before {
   margin-top: 0;
 }
 .byline > p:last-child {
-  margin-left: 76px;
+  margin-left: 84px;
   font-size: 0.875em;
   line-height: 1.14285714;
 }
@@ -751,7 +751,7 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Responsive
  */
-@media only screen and (max-width: 975px) {
+@media only screen and (max-width: 1023px) {
   .navbar2 {
     display: none;
   }
@@ -846,7 +846,7 @@ div.toc li.selected::before {
     min-height: 360px;
   }
   .byline > p:last-child {
-    margin-left: 74px;
+    margin-left: 80px;
     font-size: 1em;
     line-height: 1;
   }
@@ -973,11 +973,11 @@ div.toc li.selected::before {
   padding-bottom: 12px;
   border-left-color: #f90;
   border-bottom: 12px solid #f90;
-  border-bottom-left-radius: 120px 42px;
+  border-bottom-left-radius: 120px 48px;
 }
 @media only screen and (max-width: 639px) {
   .inner-wrap-flash {
-    border-bottom-left-radius: 90px 31.5px;
+    border-bottom-left-radius: 90px 36px;
   }
 }
 .inner-wrap-breadcrumb {
@@ -985,12 +985,12 @@ div.toc li.selected::before {
   margin-top: 6px;
   border-left-color: #c9c;
   border-top: 24px solid #c9c;
-  border-top-left-radius: 120px 42px;
+  border-top-left-radius: 120px 48px;
 }
 @media only screen and (max-width: 639px) {
   .inner-wrap-breadcrumb {
     height: 24px;
-    border-top-left-radius: 90px 31.5px;
+    border-top-left-radius: 90px 36px;
   }
 }
 .inner-wrap-main {
@@ -1148,8 +1148,10 @@ hr::after {
  */
 .site-logo-text {
   left: 0;
-  top: 1px;
+  top: 0;
+  font-size: 3em;
   font-weight: normal;
+  line-height: 72px;
   text-transform: uppercase;
 }
 .rm-navbar ul.rm-desktop {
@@ -1157,7 +1159,7 @@ hr::after {
 }
 .rm-desktop li {
   height: 36px;
-  margin-top: 8px;
+  margin-top: 24px;
   margin-left: 4px;
   text-transform: uppercase;
 }
@@ -1167,7 +1169,7 @@ hr::after {
   left: -28px;
   top: 0;
   width: 24px;
-  height: 36px;
+  height: 100%;
   background-color: #c69;
   border-radius: 2em 0 0 2em;
   display: block;
@@ -1178,7 +1180,7 @@ hr::after {
   right: -28px;
   top: 0;
   width: 24px;
-  height: 36px;
+  height: 100%;
   background-color: #c69;
   border-radius: 0 2em 2em 0;
   display: block;
@@ -1361,10 +1363,10 @@ div.toc li.selected a::after {
 /** --------------------------------------------------------------
  *  Responsive
  */
-@media only screen and (max-width: 975px) {
+@media only screen and (max-width: 1023px) {
   .rm-max.rm-navbar,
   .rm-max .rm-small .rm-button.rm-clicked {
-    top: 8px;
+    top: 24px;
     right: 28px;
     color: #000;
   }
@@ -1416,10 +1418,29 @@ div.toc li.selected a::after {
   }
 }
 @media only screen and (max-width: 639px) {
+  .site-logo-text {
+    font-size: 2.5em;
+    line-height: 48px;
+  }
   .rm-max.rm-navbar,
   .rm-max .rm-small .rm-button.rm-clicked {
     top: 6px;
-    right: 28px;
+    right: 16px;
+  }
+  .rm-max .rm-small .rm-button,
+  .rm-max .rm-small .rm-button.rm-clicked {
+    padding-left: .25em;
+    padding-right: .25em;
+  }
+  .rm-max .rm-small .rm-button::before,
+  .rm-max .rm-small .rm-button.rm-clicked::before {
+    left: -16px;
+    width: 12px;
+  }
+  .rm-max .rm-small .rm-button::after,
+  .rm-max .rm-small .rm-button.rm-clicked::after {
+    right: -16px;
+    width: 12px;
   }
   .rm-max .rm-small .rm-button {
     padding-top: 3px;
@@ -1429,7 +1450,7 @@ div.toc li.selected a::after {
     padding-bottom: 3px;
   }
   .flash-wrap img {
-    border-bottom-left-radius: 24px 12px;
+    border-bottom-left-radius: 24px 16px;
   }
   div.toc li a {
     padding-top: 2px;

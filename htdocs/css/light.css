@@ -847,7 +847,7 @@ div.toc li.selected::before {
     min-height: 330px;
   }
   .byline > p:last-child {
-    margin-left: 74px;
+    margin-left: 75px;
     font-size: 1em;
     line-height: 1.375;
   }

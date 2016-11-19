@@ -45,7 +45,7 @@
 @base-font-size: 24px;
 @base-font-size2: 20px;
 
-@breakpoint-menu: 975px;
+@breakpoint-menu: 1023px;
 
 
 /** --------------------------------------------------------------
@@ -129,7 +129,7 @@
 @strip-wide: @line-height * 4;
 @strip-thin: @line-height / 2;
 @strip-radius-1: @line-height * 5;
-@strip-radius-2: @line-height * 1.75;
+@strip-radius-2: @line-height * 2;
 
 @gap-vert: @line-height / 4;
 @gap-horiz: @line-height / 6;
@@ -355,8 +355,10 @@ hr {
  */
 .site-logo-text {
     left: 0;
-    top: 1px;
+    top: 0;
+    font-size: 3em;
     font-weight: normal;
+    line-height: @line-height * 3;
     text-transform: uppercase;
 }
 
@@ -366,7 +368,7 @@ hr {
 .rm-desktop {
     li {
         height: @line-height * 1.5;
-        margin-top: @line-height / 3;
+        margin-top: @line-height;
         margin-left: @gap-horiz;
         text-transform: uppercase;
         
@@ -376,7 +378,7 @@ hr {
             left: -(@line-height + @gap-horiz);
             top: 0;
             width: @line-height;
-            height: @line-height * 1.5;
+            height: 100%;
             background-color: @color-5;
             border-radius: 2em 0 0 2em;
             display: block;
@@ -388,7 +390,7 @@ hr {
             right: -(@line-height + @gap-horiz);
             top: 0;
             width: @line-height;
-            height: @line-height * 1.5;
+            height: 100%;
             background-color: @color-5;
             border-radius: 0 2em 2em 0;
             display: block;
@@ -614,7 +616,7 @@ div.toc {
 @media only screen and (max-width: @breakpoint-menu) {
     .rm-max.rm-navbar,
     .rm-max .rm-small .rm-button.rm-clicked {
-        top: @line-height / 3;
+        top: @line-height;
         right: @line-height + @gap-horiz;
         color: @color-bg;
     }
@@ -672,12 +674,31 @@ div.toc {
 }
 
 @media only screen and (max-width: @breakpoint-small) {
+    .site-logo-text {
+        font-size: 2.5em;
+        line-height: @line-height * 2;
+    }
+    
     .rm-max.rm-navbar,
     .rm-max .rm-small .rm-button.rm-clicked {
         top: @gap-vert;
-        right: @line-height + @gap-horiz;
+        right: @line-height / 2 + @gap-horiz;
     }
     
+    .rm-max .rm-small .rm-button,
+    .rm-max .rm-small .rm-button.rm-clicked {
+        padding-left: .25em;
+        padding-right: .25em;
+        
+        &::before {
+            left: -(@line-height / 2 + @gap-horiz);
+            width: @line-height / 2;
+        }
+        &::after {
+            right: -(@line-height / 2 + @gap-horiz);
+            width: @line-height / 2;
+        }
+    }
     .rm-max .rm-small .rm-button {
         padding-top: @gap-vert / 2;
     }
@@ -687,7 +708,7 @@ div.toc {
     }
     
     .flash-wrap img {
-        border-bottom-left-radius: @line-height (@line-height / 2);
+        border-bottom-left-radius: @line-height (@line-height / 1.5);
     }
     
     div.toc li {
