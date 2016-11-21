@@ -688,10 +688,10 @@ div.toc li.selected::before {
   border: 1px solid #222;
 }
 .notice a {
-  color: #346e91;
+  color: #0d4b70;
 }
 .notice a:hover {
-  color: #346e91;
+  color: #0d4b70;
 }
 .notice a:visited {
   color: #bbb;
