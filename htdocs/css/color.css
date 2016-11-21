@@ -939,17 +939,6 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Colors
  */
-/*@color-columnsbelow-link: @color-link;
-@color-columnsbelow-link-visited: @color-link-visited;
-@color-columnsbelow-link-hover: @color-link-hover;
-@color-columnsbelow-link-visited-hover: @color-link-visited-hover;
-@color-footer: @color-text;*/
-/*@color-footer-link: @color-link;
-@color-footer-link-hover: @color-link-hover;*/
-/*@color-notice-link: @color-link;
-@color-notice-link-visited: @color-link-visited;
-@color-notice-link-hover: @color-link-hover;
-@color-notice-link-hover: @color-link-visited-hover;*/
 /** --------------------------------------------------------------
  *  Typography
  */
