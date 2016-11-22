@@ -1,0 +1,157 @@
+/**
+ * Figure styles.
+ */
+
+@figure-margin: 1em;
+
+.figure {
+    max-width: 100%;
+    margin: 0 0 @line-height;
+    padding: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    
+    &.left {
+        float: left;
+        margin-right: @figure-margin;
+    }
+    
+    &.right {
+        float: right;
+        margin-left: @figure-margin;
+    }
+    
+    &.center {
+        clear: both;
+        position: relative;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    
+    &.caption-center {
+        figcaption {
+            text-align: center;
+        }
+    }
+    
+    &.caption-right {
+        figcaption {
+            text-align: right;
+        }
+    }
+    
+    &.top {
+        vertical-align: top;
+    }
+    
+    &.full-width {
+        clear: both;
+        display: block;
+        
+        &.center {
+            position: static;
+            -ms-transform: none;
+            transform: none;
+            
+            img {
+                position: relative;
+                left: 50%;
+                -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
+            
+            figcaption {
+                text-align: center;
+            }
+        }
+        
+        figcaption {
+            width: auto;
+            min-width: 0;
+            max-width: none;
+        }
+    }
+    
+    &.half {
+        max-width: 49%;
+    }
+    
+    &.third {
+        max-width: 32.5%;
+    }
+    
+    &.quarter {
+        max-width: 24%;
+    }
+
+    &.border {
+        margin-bottom: @line-height - @border-width * 2;
+        
+        figcaption {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    }
+    
+    &.image-border {
+        margin-bottom: @line-height - @border-width * 2;
+        
+        img {
+            border: @border-width solid @color-border;
+        }
+    }
+    
+    &.tight {
+        margin-bottom: 0;
+    }
+    
+    img {
+        max-width: 100.01%;
+        display: block;
+        box-sizing: border-box;
+    }
+    
+    figcaption {
+        width: 1px;
+        min-width: 100%;
+        max-width: 100%;
+        padding: (@line-height / 4) 0;
+        .font-size(.875em);
+        text-align: left;
+        box-sizing: border-box;
+        
+        p {
+            margin: 0;
+        }
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        &.quarter {
+            max-width: 32.5%;
+        }
+        
+        &.third {
+            max-width: 49%;
+        }
+    }
+    
+    @media only screen and (max-width: @breakpoint-mini) {
+        &.half,
+        &.third {
+            .figure-reset();
+        }
+        
+        &.quarter {
+            max-width: 49%;
+        }
+    }
+}
+
+.figure-reset() {
+    float: none;
+    clear: both;
+    max-width: none;
+    margin: 0 0 @line-height;
+    display: block;
+}

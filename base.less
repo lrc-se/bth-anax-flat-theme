@@ -7,6 +7,7 @@
 @import url('typography-sizes.less');
 @import url('typography-mixins.less');
 @import url('typography-font-families.less');
+@import url('theme-figure.less');
 
 // Basic colors
 @color-text: #000;
@@ -63,7 +64,9 @@
 @color-code: @color-text;
 @color-code-bg: @color-bg;
 @color-code-border: @color-border;
-    
+
+@border-width: 1px;
+
  
 // Grid visualization
 .route-grid .wrap-all:hover,
@@ -459,7 +462,7 @@ div.toc li {
 }
 
 .border {
-    border: 1px solid @color-border;
+    border: @border-width solid @color-border;
 }
 
 .notice {
