@@ -1,0 +1,28 @@
+/**
+ * Blog styles.
+ */
+
+article.blog {
+    margin-bottom: @line-height * 2;
+}
+
+.blog-list-item {
+    padding-top: @line-height - 1px;
+    border-top: 1px solid @color-hr;
+}
+
+.meta-header {
+    .font-size(.875em);
+    
+    .blog-list & {
+        font-weight: bold;
+    }
+
+    .blog-post & {
+        font-style: italic;
+        
+        .author {
+            font-weight: bold;
+        }
+    }
+}
