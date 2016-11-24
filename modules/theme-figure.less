@@ -16,11 +16,19 @@
     &.left {
         float: left;
         margin-right: @figure-margin;
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            margin-right: @figure-margin / 2;
+        }
     }
     
     &.right {
         float: right;
         margin-left: @figure-margin;
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            margin-left: @figure-margin / 2;
+        }
     }
     
     &.center {
@@ -29,6 +37,16 @@
         left: 50%;
         -ms-transform: translateX(-50%);
         transform: translateX(-50%);
+    }
+    
+    &.spacing {
+        margin-left: @figure-margin / 2;
+        margin-right: @figure-margin / 2;
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            margin-left: @figure-margin / 4;
+            margin-right: @figure-margin / 4;
+        }
     }
     
     &.caption-center {
