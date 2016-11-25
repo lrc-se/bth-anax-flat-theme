@@ -47,6 +47,8 @@
 
 @breakpoint-menu: 1023px;
 
+@figure-caption-margin: .5em;
+
 
 /** --------------------------------------------------------------
  *  Colors
@@ -104,6 +106,7 @@
 @color-notice-border: @color-2;
 @color-code: @color-4;
 @color-code-border: @color-6;
+@color-figure-caption: @color-2;
 
 
 // Grid visualization
@@ -606,6 +609,46 @@ div.toc {
         &.inv {
             color: @color-1;
         }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.meta-header {
+    font-weight: normal;
+    
+    .blog-list & {
+        color: @color-3;
+    }
+
+    .blog-post & {
+        color: @color-8;
+    }
+}
+
+.meta-footer {
+    color: @color-8;
+    
+    strong {
+        color: @color-3;
+    }
+}
+
+.blog-image {
+    margin-bottom: @line-height - @border-width * 2;
+    border: @border-width solid @color-8;
+    
+    &.border {
+        border-color: @color-border;
+    }
+    
+    figcaption {
+        padding-left: @figure-caption-margin;
+        padding-right: @figure-caption-margin;
+        color: @color-2;
+        border-top: @border-width solid @color-8;
     }
 }
 
