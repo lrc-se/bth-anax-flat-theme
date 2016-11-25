@@ -17,16 +17,18 @@
 @color-med-light: #aaa;
 @color-light: #f8f8f8;
 @color-primary: #1fb24d;
+@color-primary-dull: darken(desaturate(@color-primary, 25%), 5%);
 @color-accent: #b22d2b;
+@color-accent-dull: desaturate(@color-accent, 20%);
 
 // Basic colors
 @color-text: @color-light;
 @color-bg: @color-dark;
 @color-bg-main: @color-dark;
 @color-link: @color-primary;
-@color-link-visited: darken(desaturate(@color-primary, 25%), 5%);
+@color-link-visited: @color-primary-dull;
 @color-link-hover: @color-accent;
-@color-link-visited-hover: desaturate(@color-accent, 20%);
+@color-link-visited-hover: @color-accent-dull;
 @color-hr: @color-accent;
 
 // Region colors
@@ -58,6 +60,7 @@
 @color-code: @color-med-light;
 @color-code-bg: @color-bg-main;
 @color-code-border: @color-med-light;
+@color-figure-caption: @color-med-light;
 
 // Border widths
 @border-region-width: 2px;
@@ -88,7 +91,7 @@ textarea {
 }
 
 fieldset {
-    border-color: @color-link-visited;
+    border-color: @color-primary-dull;
 }
 
 legend {
@@ -223,4 +226,26 @@ div.toc {
  */
 .bottom-column {
     border-left-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    margin-bottom: @line-height - 2px;
+    border: 1px solid @color-border;
+    box-shadow: 0 0 10px 5px @color-text;
+    
+    &.border {
+        border-color: @color-bg;
+    }
+    
+    figcaption {
+        padding-left: @figure-caption-margin;
+        padding-right: @figure-caption-margin;
+        color: @color-accent-dull;
+        font-weight: bold;
+        text-align: center;
+    }
 }
