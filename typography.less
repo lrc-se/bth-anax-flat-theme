@@ -14,6 +14,7 @@
 @color-code-bg: #fff;
 @color-code-border: @color-secondary2;
 
+
 // Grid visualization
 .route-typography .inner-wrap-main:hover,
 .grid-horiz .inner-wrap-main {
@@ -249,6 +250,64 @@ div.toc li {
 .notice,
 .border {
     border-radius: 10px 0 20px 0;
+}
+
+.figure {
+    &.border {
+        overflow: hidden;
+    }
+    
+    &.image-border img {
+        border-radius: 10px 0 20px 0;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+article.blog {
+    margin-bottom: @line-height;
+}
+
+.blog-image {
+    border-radius: 10px 0 20px 0;
+    box-shadow: 0 0 15px 3px @color-grey-dark;
+    
+    &.left figcaption {
+        text-align: left;
+        
+        p::before {
+            display: none;
+        }
+    }
+    
+    &.right figcaption {
+        text-align: right;
+        
+        p::after {
+            display: none;
+        }
+    }
+    
+    img {
+        border-radius: 10px 0 20px 0;
+    }
+    
+    figcaption {
+        padding-right: @figure-caption-margin / 2;
+        text-align: center;
+        
+        p::before {
+            content: "~ ";
+            color: @color-grey-light;
+        }
+        
+        p::after {
+            content: " ~";
+            color: @color-grey-light;
+        }
+    }
 }
 
 
