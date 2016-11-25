@@ -296,6 +296,188 @@ hr {
 /**
  * Default font families
  */
+/**
+ * Figure styles.
+ */
+.figure {
+  max-width: 100%;
+  margin: 0 0 22px;
+  padding: 0;
+  background-color: transparent;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.figure.left {
+  float: left;
+  margin-right: 1em;
+}
+@media only screen and (max-width: 639px) {
+  .figure.left {
+    margin-right: 0.66666667em;
+  }
+}
+.figure.right {
+  float: right;
+  margin-left: 1em;
+}
+@media only screen and (max-width: 639px) {
+  .figure.right {
+    margin-left: 0.66666667em;
+  }
+}
+.figure.center {
+  clear: both;
+  position: relative;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.figure.spacing {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+@media only screen and (max-width: 639px) {
+  .figure.spacing {
+    margin-left: 0.33333333em;
+    margin-right: 0.33333333em;
+  }
+}
+.figure.caption-center figcaption {
+  text-align: center;
+}
+.figure.caption-right figcaption {
+  text-align: right;
+}
+.figure.top {
+  vertical-align: top;
+}
+.figure.full-width {
+  clear: both;
+  display: block;
+}
+.figure.full-width.center {
+  position: static;
+  -ms-transform: none;
+  transform: none;
+}
+.figure.full-width.center img {
+  position: relative;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.figure.full-width.center figcaption {
+  text-align: center;
+}
+.figure.full-width figcaption {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+}
+.figure.half {
+  max-width: 49%;
+}
+.figure.third {
+  max-width: 33%;
+}
+.figure.quarter {
+  max-width: 24.667%;
+}
+.figure.border {
+  margin-bottom: 20px;
+}
+.figure.border.tight {
+  margin-bottom: 9px;
+}
+.figure.border figcaption {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.figure.image-border {
+  margin-bottom: 20px;
+}
+.figure.image-border.tight {
+  margin-bottom: 9px;
+}
+.figure.image-border img {
+  border: 1px solid #555;
+}
+.figure.tight {
+  margin-bottom: 11px;
+}
+.figure.tighter {
+  margin-bottom: 0;
+}
+.figure img {
+  max-width: 100.01%;
+  display: block;
+  box-sizing: border-box;
+}
+.figure figcaption {
+  width: 1px;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 5.5px 0;
+  font-size: 0.875em;
+  line-height: 1.57142857;
+  color: #888;
+  background-color: transparent;
+  text-align: left;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 639px) {
+  .figure figcaption {
+    line-height: 1.67619048;
+  }
+}
+.figure figcaption p {
+  margin: 0;
+}
+@media only screen and (max-width: 639px) {
+  .figure.quarter {
+    max-width: 33%;
+  }
+  .figure.third {
+    max-width: 49%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .figure.half,
+  .figure.third {
+    float: none;
+    clear: both;
+    max-width: none;
+    margin: 0 0 22px;
+    display: block;
+  }
+  .figure.quarter {
+    max-width: 49%;
+  }
+}
+/**
+ * Blog styles.
+ */
+article.blog {
+  margin-bottom: 44px;
+}
+.meta-header {
+  font-size: 0.875em;
+  line-height: 1.57142857;
+}
+@media only screen and (max-width: 639px) {
+  .meta-header {
+    line-height: 1.67619048;
+  }
+}
+.blog-list .meta-header {
+  font-weight: bold;
+}
+.blog-post .meta-header {
+  font-style: italic;
+}
+.blog-post .meta-header .author {
+  font-weight: bold;
+}
 .route-grid .wrap-all:hover .inner-wrap-main,
 .grid-vert .wrap-all .inner-wrap-main,
 .route-grid .wrap-all:hover .inner-wrap-columns-below,
@@ -588,7 +770,7 @@ div.toc li.selected::before {
 .main a:visited:hover {
   color: #022c44;
 }
-.article > p:last-child {
+.article > *:last-child {
   margin-bottom: 0;
 }
 .next-previous {
@@ -675,6 +857,9 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Global styles
  */
+.text-center {
+  text-align: center;
+}
 .border {
   border: 1px solid #555;
 }
@@ -752,7 +937,7 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Responsive
  */
-@media only screen and (max-width: 911px) {
+@media only screen and (max-width: 919px) {
   .navbar2 {
     display: none;
   }
@@ -986,4 +1171,25 @@ div.toc li.selected::before {
 .notice {
   padding: 11px 1em;
   border: none;
+}
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+  padding: 11px 0.75em;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #222;
+}
+.blog-image.left {
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.blog-image.right {
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+.blog-image figcaption {
+  padding-bottom: 0;
+  font-style: italic;
+  text-align: center;
 }
