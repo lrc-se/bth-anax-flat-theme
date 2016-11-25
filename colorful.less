@@ -90,6 +90,7 @@
 @color-notice-link-visited-hover: @color-notice-link-visited;
 @color-code: @color-grey-light;
 @color-code-bg: @color-secondary2-darker;
+@color-figure-caption: @color-grey;
 
 
 /** --------------------------------------------------------------
@@ -192,4 +193,30 @@ div.toc li {
 .notice {
     padding: (@line-height / 2) 1em;
     border: none;
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    padding: (@line-height / 2) @figure-caption-margin;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px @color-text;
+    
+    &.left {
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+    
+    &.right {
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+    
+    figcaption {
+        padding-bottom: 0;
+        font-style: italic;
+        text-align: center;
+    }
 }
