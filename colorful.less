@@ -91,6 +91,7 @@
 @color-code: @color-grey-light;
 @color-code-bg: @color-secondary2-darker;
 @color-figure-caption: @color-grey;
+@color-figure-bordered-caption-bg: #fff;
 
 
 /** --------------------------------------------------------------
@@ -201,22 +202,44 @@ div.toc li {
  */
 .blog-image {
     padding: (@line-height / 2) @figure-caption-margin;
-    background-color: #fff;
+    background-color: @color-figure-bordered-caption-bg;
     box-shadow: 2px 2px 2px @color-text;
     
     &.left {
-        -ms-transform: rotate(-3deg);
-        transform: rotate(-3deg);
+        -ms-transform: rotate(-2deg);
+        transform: rotate(-2deg);
     }
     
     &.right {
-        -ms-transform: rotate(3deg);
-        transform: rotate(3deg);
+        -ms-transform: rotate(2deg);
+        transform: rotate(2deg);
     }
     
     figcaption {
         padding-bottom: 0;
         font-style: italic;
         text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+        
+        &.left {
+            -ms-transform: rotate(-1.5deg);
+            transform: rotate(-1.5deg);
+        }
+        
+        &.right {
+            -ms-transform: rotate(1.5deg);
+            transform: rotate(1.5deg);
+        }
+    }
+
+    @media only screen and (max-width: @breakpoint-mini) {
+        &.half,
+        &.third {
+            -ms-transform: none;
+            transform: none;
+        }
     }
 }
