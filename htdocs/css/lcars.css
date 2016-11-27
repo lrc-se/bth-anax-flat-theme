@@ -308,20 +308,20 @@ hr {
 }
 .figure.left {
   float: left;
-  margin-right: 1em;
+  margin-right: 0.75em;
 }
 @media only screen and (max-width: 639px) {
   .figure.left {
-    margin-right: 0.66666667em;
+    margin-right: 0.5em;
   }
 }
 .figure.right {
   float: right;
-  margin-left: 1em;
+  margin-left: 0.75em;
 }
 @media only screen and (max-width: 639px) {
   .figure.right {
-    margin-left: 0.66666667em;
+    margin-left: 0.5em;
   }
 }
 .figure.center {
@@ -332,13 +332,13 @@ hr {
   transform: translateX(-50%);
 }
 .figure.spacing {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 0.375em;
+  margin-right: 0.375em;
 }
 @media only screen and (max-width: 639px) {
   .figure.spacing {
-    margin-left: 0.33333333em;
-    margin-right: 0.33333333em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
   }
 }
 .figure.caption-center figcaption {
@@ -349,6 +349,9 @@ hr {
 }
 .figure.top {
   vertical-align: top;
+}
+.figure.middle {
+  vertical-align: middle;
 }
 .figure.full-width {
   clear: both;
@@ -391,6 +394,8 @@ hr {
 .figure.border figcaption {
   padding-left: 0.5em;
   padding-right: 0.5em;
+  color: #f96;
+  background-color: transparent;
 }
 .figure.image-border {
   margin-bottom: 22px;
@@ -417,10 +422,10 @@ hr {
   min-width: 100%;
   max-width: 100%;
   padding: 6px 0;
-  font-size: 0.875em;
-  line-height: 1.14285714;
   color: #f96;
   background-color: transparent;
+  font-size: 0.875em;
+  line-height: 1.14285714;
   text-align: left;
   box-sizing: border-box;
 }
@@ -459,10 +464,6 @@ hr {
 article.blog {
   margin-bottom: 48px;
 }
-/*.blog-list-item {
-    padding-top: @line-height - 1px;
-    border-top: 1px solid @color-hr;
-}*/
 .meta-header {
   font-size: 0.875em;
   line-height: 1.14285714;
