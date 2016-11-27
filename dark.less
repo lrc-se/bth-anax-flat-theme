@@ -235,17 +235,24 @@ div.toc {
 .blog-image {
     margin-bottom: @line-height - 2px;
     border: 1px solid @color-border;
-    box-shadow: 0 0 10px 5px @color-text;
+    box-shadow: 0 0 10px 2px @color-text;
     
     &.border {
         border-color: @color-bg;
     }
     
     figcaption {
+        position: relative;
         padding-left: @figure-caption-margin;
         padding-right: @figure-caption-margin;
         color: @color-accent-dull;
         font-weight: bold;
         text-align: center;
+        box-shadow: 0 -1px 3px @color-med-light;
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            padding-top: @line-height / 6;
+            padding-bottom: @line-height / 6;
+        }
     }
 }
