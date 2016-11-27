@@ -65,6 +65,10 @@
         vertical-align: top;
     }
     
+    &.middle {
+        vertical-align: middle;
+    }
+    
     &.full-width {
         clear: both;
         display: block;
@@ -115,6 +119,8 @@
         figcaption {
             padding-left: @figure-caption-margin;
             padding-right: @figure-caption-margin;
+            color: @color-figure-bordered-caption;
+            background-color: @color-figure-bordered-caption-bg;
         }
     }
     
@@ -149,9 +155,9 @@
         min-width: 100%;
         max-width: 100%;
         padding: (@line-height / 4) 0;
-        .font-size(.875em);
         color: @color-figure-caption;
         background-color: @color-figure-caption-bg;
+        .font-size(.875em);
         text-align: left;
         box-sizing: border-box;
         

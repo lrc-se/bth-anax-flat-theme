@@ -114,6 +114,9 @@
 .figure.top {
   vertical-align: top;
 }
+.figure.middle {
+  vertical-align: middle;
+}
 .figure.full-width {
   clear: both;
   display: block;
@@ -155,6 +158,8 @@
 .figure.border figcaption {
   padding-left: 0.75em;
   padding-right: 0.75em;
+  color: #000;
+  background-color: transparent;
 }
 .figure.image-border {
   margin-bottom: 20px;
@@ -181,10 +186,10 @@
   min-width: 100%;
   max-width: 100%;
   padding: 5.5px 0;
-  font-size: 0.875em;
-  line-height: 1.57142857;
   color: #000;
   background-color: transparent;
+  font-size: 0.875em;
+  line-height: 1.57142857;
   text-align: left;
   box-sizing: border-box;
 }
