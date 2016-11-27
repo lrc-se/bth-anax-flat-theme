@@ -593,7 +593,7 @@ blockquote::before {
   opacity: .25;
 }
 hr {
-  border-top-color: #346e91;
+  border-top-color: #185e87;
 }
 button,
 input,
@@ -1335,7 +1335,7 @@ hr::before {
   top: 50%;
   width: 50%;
   height: 24px;
-  border-top: 2px solid #346e91;
+  border-top: 2px solid #185e87;
   border-top-left-radius: 15px;
   display: block;
 }
@@ -1346,7 +1346,7 @@ hr::after {
   top: -50%;
   width: 50%;
   height: 24px;
-  border-bottom: 2px solid #346e91;
+  border-bottom: 2px solid #185e87;
   border-bottom-right-radius: 30px;
   display: block;
 }

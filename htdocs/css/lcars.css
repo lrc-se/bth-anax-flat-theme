@@ -1380,6 +1380,7 @@ hr::after {
   background-color: #99f;
 }
 .rm-mobile li {
+  text-transform: uppercase;
   box-shadow: 0 0 1px #000;
 }
 .rm-max .rm-small .rm-button {
@@ -1553,20 +1554,20 @@ div.toc li.selected a::after {
 /** --------------------------------------------------------------
  *  Blog
  */
-.meta-header {
-  font-weight: normal;
-}
 .blog-list .meta-header {
   color: #f90;
+  font-weight: normal;
 }
 .blog-post .meta-header {
   color: #c66;
+  font-style: normal;
 }
 .meta-footer {
   color: #c66;
 }
 .meta-footer strong {
   color: #f90;
+  font-weight: normal;
 }
 .blog-image {
   margin-bottom: 22px;
