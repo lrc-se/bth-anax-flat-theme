@@ -351,6 +351,9 @@ hr {
 .figure.top {
   vertical-align: top;
 }
+.figure.middle {
+  vertical-align: middle;
+}
 .figure.full-width {
   clear: both;
   display: block;
@@ -392,6 +395,8 @@ hr {
 .figure.border figcaption {
   padding-left: 0.75em;
   padding-right: 0.75em;
+  color: #6f6860;
+  background-color: #fff;
 }
 .figure.image-border {
   margin-bottom: 20px;
@@ -418,10 +423,10 @@ hr {
   min-width: 100%;
   max-width: 100%;
   padding: 5.5px 0;
-  font-size: 0.875em;
-  line-height: 1.57142857;
   color: #6f6860;
   background-color: transparent;
+  font-size: 0.875em;
+  line-height: 1.57142857;
   text-align: left;
   box-sizing: border-box;
 }
@@ -1209,4 +1214,12 @@ pre code {
   padding-bottom: 0;
   font-style: italic;
   text-align: center;
+}
+@media only screen and (max-width: 639px) {
+  .blog-image {
+    padding: 5.5px 0.375em;
+  }
+  .blog-image figcaption {
+    padding-top: 3.66666667px;
+  }
 }

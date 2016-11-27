@@ -74,6 +74,7 @@
 @color-code-bg: @color-light;
 @color-code-border: @color-med;
 @color-figure-caption: @color-med-dark;
+@color-figure-bordered-caption-bg: #fff;
 
 
 /** --------------------------------------------------------------
@@ -184,5 +185,13 @@ pre code {
         padding-bottom: 0;
         font-style: italic;
         text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 4) (@figure-caption-margin / 2);
+        
+        figcaption {
+            padding-top: @line-height / 6;
+        }
     }
 }
