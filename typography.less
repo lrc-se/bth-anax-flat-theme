@@ -308,6 +308,31 @@ article.blog {
             color: @color-grey-light;
         }
     }
+    
+    @media only screen and (max-width: @breakpoint-mini) {
+        &.third,
+        &.half {
+            &.left {
+                figcaption {
+                    text-align: center;
+        
+                    p::before {
+                        display: inline;
+                    }
+                }
+            }
+            
+            &.right {
+                figcaption {
+                    text-align: center;
+                    
+                    p::after {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
 }
 
 

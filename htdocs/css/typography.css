@@ -354,6 +354,9 @@ hr {
 .figure.top {
   vertical-align: top;
 }
+.figure.middle {
+  vertical-align: middle;
+}
 .figure.full-width {
   clear: both;
   display: block;
@@ -395,6 +398,8 @@ hr {
 .figure.border figcaption {
   padding-left: 0.75em;
   padding-right: 0.75em;
+  color: #888;
+  background-color: #fff;
 }
 .figure.image-border {
   margin-bottom: 22px;
@@ -421,10 +426,10 @@ hr {
   min-width: 100%;
   max-width: 100%;
   padding: 6px 0;
-  font-size: 0.875em;
-  line-height: 1.61344538;
   color: #888;
   background-color: transparent;
+  font-size: 0.875em;
+  line-height: 1.61344538;
   text-align: left;
   box-sizing: border-box;
 }
@@ -1184,17 +1189,37 @@ div.toc li.selected::before {
   box-shadow: 2px 2px 2px #222;
 }
 .blog-image.left {
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 .blog-image.right {
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 .blog-image figcaption {
   padding-bottom: 0;
   font-style: italic;
   text-align: center;
+}
+@media only screen and (max-width: 639px) {
+  .blog-image {
+    padding: 8px 0.5em;
+  }
+  .blog-image.left {
+    -ms-transform: rotate(-1.5deg);
+    transform: rotate(-1.5deg);
+  }
+  .blog-image.right {
+    -ms-transform: rotate(1.5deg);
+    transform: rotate(1.5deg);
+  }
+}
+@media only screen and (max-width: 479px) {
+  .blog-image.half,
+  .blog-image.third {
+    -ms-transform: none;
+    transform: none;
+  }
 }
 .route-typography .inner-wrap-main:hover,
 .grid-horiz .inner-wrap-main {
@@ -1410,6 +1435,24 @@ article.blog {
 .blog-image figcaption p::after {
   content: " ~";
   color: #bbb;
+}
+@media only screen and (max-width: 479px) {
+  .blog-image.third.left figcaption,
+  .blog-image.half.left figcaption {
+    text-align: center;
+  }
+  .blog-image.third.left figcaption p::before,
+  .blog-image.half.left figcaption p::before {
+    display: inline;
+  }
+  .blog-image.third.right figcaption,
+  .blog-image.half.right figcaption {
+    text-align: center;
+  }
+  .blog-image.third.right figcaption p::after,
+  .blog-image.half.right figcaption p::after {
+    display: inline;
+  }
 }
 /** --------------------------------------------------------------
  *  Responsive
