@@ -720,6 +720,12 @@ legend {
     padding-right: 1em;
   }
 }
+.sidebar a:visited {
+  color: #053c5c;
+}
+.sidebar a:visited:hover {
+  color: #022c44;
+}
 .sidebar-left {
   padding-right: 0;
 }
@@ -730,12 +736,6 @@ div.toc ul {
   position: relative;
   padding: 0 0 0 1em;
   list-style-type: none;
-}
-div.toc li a:visited {
-  color: #053c5c;
-}
-div.toc li a:visited:hover {
-  color: #022c44;
 }
 div.toc li::before {
   content: "›";

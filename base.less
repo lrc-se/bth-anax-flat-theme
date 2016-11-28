@@ -312,6 +312,7 @@ legend {
  */
 .sidebar {
     .content-spacing();
+    .link-visited(@color-link-visited, @color-link-visited-hover);
 }
 .sidebar-left {
     padding-right: 0;
@@ -325,8 +326,6 @@ div.toc ul {
     list-style-type: none;
 }
 div.toc li {
-    .link-visited(@color-link-visited, @color-link-visited-hover);
-    
     &::before {
         content: "›";
         position: absolute;
