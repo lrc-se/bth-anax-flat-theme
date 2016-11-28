@@ -1425,15 +1425,15 @@ article.blog {
   border-radius: 10px 0 20px 0;
 }
 .blog-image figcaption {
-  padding-right: 0.375em;
+  padding-right: 0.1875em;
   text-align: center;
 }
 .blog-image figcaption p::before {
-  content: "~ ";
+  content: "~\a0";
   color: #bbb;
 }
 .blog-image figcaption p::after {
-  content: " ~";
+  content: "\a0~";
   color: #bbb;
 }
 @media only screen and (max-width: 479px) {

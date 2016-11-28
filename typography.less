@@ -295,16 +295,16 @@ article.blog {
     }
     
     figcaption {
-        padding-right: @figure-caption-margin / 2;
+        padding-right: @figure-caption-margin / 4;
         text-align: center;
         
         p::before {
-            content: "~ ";
+            content: "~\a0";
             color: @color-grey-light;
         }
         
         p::after {
-            content: " ~";
+            content: "\a0~";
             color: @color-grey-light;
         }
     }
