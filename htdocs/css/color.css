@@ -1229,8 +1229,8 @@ div.toc li.selected::before {
 }
 @media only screen and (max-width: 639px) {
   .blog-image figcaption {
-    padding-top: 2.66666667px;
-    padding-bottom: 3.66666667px;
+    padding-top: 3.66666667px;
+    padding-bottom: 2.66666667px;
   }
 }
 /** --------------------------------------------------------------
