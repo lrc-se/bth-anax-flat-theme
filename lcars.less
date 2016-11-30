@@ -640,7 +640,6 @@ div.toc {
 }
 
 .blog-image {
-    margin-bottom: @line-height - @border-width * 2;
     border: @border-width solid @color-8;
     
     &.border {
@@ -648,8 +647,7 @@ div.toc {
     }
     
     figcaption {
-        padding-left: @figure-caption-margin;
-        padding-right: @figure-caption-margin;
+        padding: (@line-height / 4 - @border-width) @figure-caption-margin (@line-height / 4);
         color: @color-2;
         border-top: @border-width solid @color-8;
     }

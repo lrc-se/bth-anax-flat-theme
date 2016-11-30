@@ -453,7 +453,12 @@ hr {
     clear: both;
     max-width: none;
     margin: 0 0 22px;
-    display: block;
+  }
+  .figure.half.border,
+  .figure.third.border,
+  .figure.half.image-border,
+  .figure.third.image-border {
+    margin-bottom: 20px;
   }
   .figure.quarter {
     max-width: 49%;
@@ -1213,11 +1218,7 @@ div.toc li.selected::before {
  *  Blog
  */
 .blog-image {
-  margin-bottom: 18px;
   border: 2px solid #000;
-}
-.blog-image.tight {
-  margin-bottom: 7px;
 }
 .blog-image figcaption {
   padding: 5.5px 0.75em 4.5px;

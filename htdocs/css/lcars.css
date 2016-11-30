@@ -452,7 +452,12 @@ hr {
     clear: both;
     max-width: none;
     margin: 0 0 24px;
-    display: block;
+  }
+  .figure.half.border,
+  .figure.third.border,
+  .figure.half.image-border,
+  .figure.third.image-border {
+    margin-bottom: 22px;
   }
   .figure.quarter {
     max-width: 49%;
@@ -1570,15 +1575,15 @@ div.toc li.selected a::after {
   font-weight: normal;
 }
 .blog-image {
-  margin-bottom: 22px;
   border: 1px solid #c66;
 }
 .blog-image.border {
   border-color: #f90;
 }
 .blog-image figcaption {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  /*padding-left: @figure-caption-margin;
+        padding-right: @figure-caption-margin;*/
+  padding: 5px 0.5em 6px;
   color: #f96;
   border-top: 1px solid #c66;
 }
