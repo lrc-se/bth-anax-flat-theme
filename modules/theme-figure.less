@@ -179,19 +179,19 @@
     @media only screen and (max-width: @breakpoint-mini) {
         &.half,
         &.third {
-            .figure-reset();
+            float: none;
+            clear: both;
+            max-width: none;
+            margin: 0 0 @line-height;
+            
+            &.border,
+            &.image-border {
+                margin-bottom: @line-height - @border-width * 2;
+            }
         }
         
         &.quarter {
             max-width: 49%;
         }
     }
-}
-
-.figure-reset() {
-    float: none;
-    clear: both;
-    max-width: none;
-    margin: 0 0 @line-height;
-    display: block;
 }
