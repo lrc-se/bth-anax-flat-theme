@@ -1149,6 +1149,7 @@ pre code {
  *  Sidebar
  */
 div.toc ul {
+  padding-left: 1.25em;
   list-style-type: square;
 }
 div.toc li a {
@@ -1246,6 +1247,9 @@ div.toc li.selected::before {
  *  Responsive
  */
 @media only screen and (max-width: 815px) {
+  div.toc ul {
+    padding-left: 0;
+  }
   .main.has-sidebar-left {
     margin-top: 0;
   }

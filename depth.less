@@ -13,17 +13,17 @@
 // Theme palette
 @color-dark: #555;
 @color-med-dark: #777;
-@color-med-light: #999;
+@color-med-light: #aaa;
 @color-light: #eee;
 
 // Basic colors
 @color-text: #000;
-@color-bg: #ddd;
+@color-bg: #ccc;
 @color-bg-main: #fff;
-@color-link: @color-med-light;
-@color-link-visited: @color-dark;
-@color-link-hover: @color-med-dark;
-@color-link-visited-hover: @color-dark;
+@color-link: @color-med-dark;
+@color-link-visited: @color-med-light;
+@color-link-hover: @color-dark;
+@color-link-visited-hover: @color-med-dark;
 @color-hr: @color-med-light;
 
 // Region colors
@@ -73,7 +73,7 @@
 
 .region-shadow(@distance, @level) {
     position: relative;
-    box-shadow: 0 @distance (@level + 2px) @color-shadow;
+    box-shadow: 0 @distance (@level + 2px) 1px fadeout(@color-shadow, (3 - unit(@level)) * 20%);
     z-index: @level;
 }
 
@@ -87,9 +87,9 @@
  */
 .wrap-all {
     @media only screen and (min-width: (@max-width + 1px)) {
-        .shadow(10px);
         margin-top: @line-height;
         margin-bottom: @line-height;
+        .shadow(15px);
     }
 }
 
