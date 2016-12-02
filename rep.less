@@ -1,0 +1,278 @@
+/**
+ * Design principles: Repetition and framing.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-dark: #3f527f;
+@color-med-dark: #5274b6;
+@color-med-light: #a5b2bb;
+@color-light: #d0dff8;
+@color-accent: #2040b0;
+
+// Basic colors
+@color-text: #20252b;
+@color-bg: #f2f4fa;
+@color-bg-main: #fff;
+@color-link: @color-med-light;
+@color-link-visited: @color-dark;
+@color-link-hover: @color-med-dark;
+@color-link-visited-hover: @color-dark;
+@color-hr: @color-med-light;
+
+// Region colors
+@color-header-bg: @color-accent;
+@color-header-link: @color-bg-main;
+@color-header-link-hover: @color-header-link;
+@color-navbar: @color-bg-main;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-med-dark;
+@color-navbar-active: @color-accent;
+@color-navbar-active-bg: @color-bg-main;
+@color-menu-close: @color-accent;
+@color-menu-bg: @color-bg-main;
+@color-menuitem: @color-dark;
+@color-menuitem-bg: @color-light;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-accent;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-light;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-dark;
+@color-aftermain: @color-dark;
+@color-aftermain-bg: @color-bg;
+@color-aftermain-link: @color-med-dark;
+@color-aftermain-link-hover: @color-dark;
+@color-columnsbelow-bg: @color-bg-main;
+@color-footer-bg: @color-light;
+@color-footer-link: @color-med-dark;
+@color-footer-link-hover: @color-dark;
+
+// Component colors
+@color-border: @color-text;
+@color-notice-bg: @color-light;
+@color-code: @color-dark;
+@color-code-bg: @color-bg;
+@color-figure-caption: @color-dark;
+@color-figure-bordered-caption-bg: @color-bg;
+
+// Tape effect
+.tapes() {
+    &::before {
+        content: url('../img/tape-left.png');
+        position: absolute;
+        left: -10px;
+        top: -8px;
+        z-index: 10;
+    }
+
+    &::after {
+        content: url('../img/tape-right.png');
+        position: absolute;
+        right: -10px;
+        top: -11px;
+        z-index: 10;
+    }
+}
+
+@color-shadow: #000;
+
+.shadow(@color: @color-shadow) {
+    box-shadow: 0 1px 3px @color;
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+body {
+    background-image: url('../img/bg-paper.jpg');
+}
+
+.wrap-all {
+    overflow: visible;
+    
+    @media only screen and (min-width: (@max-width + 1px)) {
+        margin-top: @line-height;
+        margin-bottom: @line-height;
+    }
+}
+
+.outer-wrap {
+    position: relative;
+    
+    @media only screen and (min-width: (@max-width + 20px)) {
+        .tapes();
+    }
+}
+
+.inner-wrap {
+    margin-bottom: @line-height;
+    .shadow();
+    overflow: hidden;
+    
+    @media only screen and (max-width: @max-width) {
+        margin-bottom: @line-height / 2;
+    }
+}
+.inner-wrap-footer {
+    margin-bottom: 0;
+}
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+pre code {
+    border: @border-width solid @color-code-border;
+    padding: (@line-height / 2 - @border-width) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-med-dark;
+    }
+    
+    td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Figures
+ */
+/*.figure {
+    position: relative;
+    .tapes();
+    
+    img {
+        .shadow();
+    }
+    
+    &.border {
+        .shadow();
+        
+        img {
+            box-shadow: none;
+        }
+    }
+    
+    &.full-width {
+        &::before,
+        &::after {
+            display: none;
+        }
+        
+        &.border {
+            box-shadow: none;
+        }
+    }
+}*/
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list {
+    ul {
+        line-height: @line-height * 1.5;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &.selected {
+        a {
+            padding: 0 3px;
+            color: @color-bg-main;
+            background-color: @color-accent;
+            display: inline-block;
+            
+            @media only screen and (max-width: @breakpoint-med) {
+                padding: 0 5px;
+            }
+            
+            &:hover {
+                color: @color-bg-main;
+                text-decoration: none;
+            }
+        }
+        
+        &::before {
+            color: @color-accent;
+            opacity: 1;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    position: relative;
+    padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+    background-color: @color-bg;
+    .shadow();
+    .tapes();
+    
+    img {
+        box-shadow: none;
+    }
+    
+    figcaption {
+        padding-bottom: 0;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 4) (@figure-caption-margin / 2);
+        
+        figcaption {
+            padding-top: @line-height / 6;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.notice {
+    position: relative;
+    padding-top: @line-height / 2;
+    padding-bottom: @line-height / 2;
+    border: none;
+    .shadow();
+    .tapes();
+}
