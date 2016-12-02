@@ -1,0 +1,360 @@
+/**
+ * Design principles: Depth.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-dark: #555;
+@color-med-dark: #777;
+@color-med-light: #999;
+@color-light: #eee;
+
+// Basic colors
+@color-text: #000;
+@color-bg: #ddd;
+@color-bg-main: #fff;
+@color-link: @color-med-light;
+@color-link-visited: @color-dark;
+@color-link-hover: @color-med-dark;
+@color-link-visited-hover: @color-dark;
+@color-hr: @color-med-light;
+
+// Region colors
+@color-header-bg: @color-bg-main;
+@color-header-link: @color-text;
+@color-header-link-hover: @color-text;
+@color-navbar: @color-text;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-bg;
+@color-navbar-active: @color-bg-main;
+@color-navbar-active-bg: @color-text;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-bg-main;
+@color-menuitem: @color-navbar;
+@color-menuitem-bg: @color-bg;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-text;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-light;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-dark;
+@color-aftermain: @color-dark;
+@color-aftermain-bg: @color-bg-main;
+@color-aftermain-link: @color-med-light;
+@color-aftermain-link-hover: @color-med-dark;
+@color-columnsbelow-bg: @color-bg-main;
+@color-footer-bg: @color-light;
+@color-footer-link: @color-med-dark;
+@color-footer-link-hover: @color-dark;
+
+// Component colors
+@color-border: @color-text;
+@color-notice-bg: @color-light;
+@color-notice-border: transparent;
+@color-code: @color-dark;
+@color-code-bg: @color-light;
+@color-code-border: @color-med-dark;
+@color-figure-caption: @color-dark;
+@color-figure-bordered-caption-bg: @color-light;
+
+// Shadows
+@color-shadow: #000;
+@color-shadow-text: fadeout(@color-shadow, 20%);
+
+.shadow(@blur: 10px, @color: @color-shadow) {
+    border-radius: 3px;
+    box-shadow: 1px 1px @blur 1px @color;
+}
+
+.region-shadow(@distance, @level) {
+    position: relative;
+    box-shadow: 0 @distance (@level + 2px) @color-shadow;
+    z-index: @level;
+}
+
+.text-shadow(@color: @color-shadow-text, @distance: 1px, @blur: 3px) {
+    text-shadow: @distance @distance @blur @color;
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+.wrap-all {
+    @media only screen and (min-width: (@max-width + 1px)) {
+        .shadow(10px);
+        margin-top: @line-height;
+        margin-bottom: @line-height;
+    }
+}
+
+body {
+    @media only screen and (max-width: @max-width) {
+        background-color: @color-footer-bg;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+h1 {
+    .text-shadow(@color-shadow-text, 3px, 6px);
+}
+
+h2 {
+    .text-shadow(@color-shadow-text, 2px, 5px);
+}
+
+h3 {
+    .text-shadow(@color-shadow-text, 1px, 4px);
+}
+
+h4,
+h5,
+h6,
+dt {
+    .text-shadow();
+}
+
+blockquote {
+    &::before {
+        .text-shadow();
+        opacity: .75;
+    }
+}
+
+pre {
+    border: 1px solid @color-code-border;
+    .shadow();
+    
+    code {
+        padding: (@line-height / 2 - 1px) 1em;
+        color: @color-code;
+        background-color: @color-code-bg;
+    }
+}
+
+th {
+    .text-shadow();
+}
+
+.table {
+    th {
+        border-bottom-color: @color-med-dark;
+    }
+    
+    td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Figures
+ */
+.figure {
+    img {
+        .shadow();
+    }
+    
+    &.border {
+        .shadow();
+        overflow: hidden;
+        
+        img {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.inner-wrap-header {
+    .region-shadow(1px, 3);
+}
+
+.site-logo-text {
+    .text-shadow(@color-shadow-text, 3px, 6px);
+}
+
+.rm-default,
+.rm-button:not(.rm-clicked) .rm-button-face-1,
+.rm-button.rm-clicked .rm-button-face-2 {
+    .text-shadow();
+}
+
+.rm-default li.selected,
+.rm-default li.selected-parent {
+    .text-shadow(fadeout(@color-bg-main, 25%));
+}
+
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Flash
+ */
+.inner-wrap-flash {
+    .region-shadow(1px, 2);
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.inner-wrap-breadcrumb {
+    .region-shadow(1px, 1);
+}
+
+.breadcrumb-list {
+    .text-shadow();
+    
+    ul {
+        line-height: @line-height * 1.5;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &.selected {
+        a {
+            padding: 0 3px;
+            color: @color-bg-main;
+            background-color: @color-text;
+            display: inline-block;
+            
+            @media only screen and (max-width: @breakpoint-med) {
+                padding: 0 5px;
+            }
+            
+            &:hover {
+                color: @color-bg-main;
+                text-decoration: none;
+            }
+        }
+        
+        &::before {
+            color: @color-text;
+            opacity: 1;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.inner-wrap-after-main {
+    .region-shadow(-1px, 1);
+}
+
+.byline {
+    overflow: visible;
+    
+    img {
+        .shadow();
+    }
+    
+    &::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.inner-wrap-columns-below {
+    .region-shadow(-1px, 2);
+}
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.inner-wrap-footer {
+    .region-shadow(-1px, 3);
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+    background-color: @color-light;
+    .shadow();
+    
+    img {
+        box-shadow: none;
+    }
+    
+    figcaption {
+        padding-bottom: 0;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    &.border img {
+        border-radius: 3px;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 4) (@figure-caption-margin / 2);
+        
+        figcaption {
+            padding-top: @line-height / 6;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.border {
+    .shadow();
+}
+
+.notice {
+    .shadow(5px);
+}
+
+.palette {
+    overflow: visible;
+    
+    li {
+        .shadow(5px);
+    }
+        
+    &::after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
