@@ -21,10 +21,10 @@
 @color-text: #20252b;
 @color-bg: #f2f4fa;
 @color-bg-main: #fff;
-@color-link: @color-med-light;
-@color-link-visited: @color-dark;
-@color-link-hover: @color-med-dark;
-@color-link-visited-hover: @color-dark;
+@color-link: @color-med-dark;
+@color-link-visited: @color-med-light;
+@color-link-hover: @color-link;
+@color-link-visited-hover: @color-link-visited;
 @color-hr: @color-med-light;
 
 // Region colors
@@ -85,7 +85,7 @@
 @color-shadow: #000;
 
 .shadow(@color: @color-shadow) {
-    box-shadow: 0 1px 3px @color;
+    box-shadow: 0 2px 3px @color;
 }
 
 
@@ -149,38 +149,6 @@ pre code {
 
 
 /** --------------------------------------------------------------
- *  Figures
- */
-/*.figure {
-    position: relative;
-    .tapes();
-    
-    img {
-        .shadow();
-    }
-    
-    &.border {
-        .shadow();
-        
-        img {
-            box-shadow: none;
-        }
-    }
-    
-    &.full-width {
-        &::before,
-        &::after {
-            display: none;
-        }
-        
-        &.border {
-            box-shadow: none;
-        }
-    }
-}*/
-
-
-/** --------------------------------------------------------------
  *  Header
  */
 .rm-mobile li {
@@ -201,6 +169,9 @@ pre code {
 /** --------------------------------------------------------------
  *  Sidebar
  */
+div.toc ul {
+    list-style-type: square;
+}
 div.toc li {
     a {
         text-decoration: none;
@@ -210,11 +181,16 @@ div.toc li {
         }
     }
     
+    &::before {
+        display: none;
+    }
+    
     &.selected {
         a {
             padding: 0 3px;
             color: @color-bg-main;
             background-color: @color-accent;
+            text-decoration: none;
             display: inline-block;
             
             @media only screen and (max-width: @breakpoint-med) {
@@ -228,8 +204,7 @@ div.toc li {
         }
         
         &::before {
-            color: @color-accent;
-            opacity: 1;
+            display: none;
         }
     }
 }
@@ -275,4 +250,14 @@ div.toc li {
     border: none;
     .shadow();
     .tapes();
+}
+
+
+/** --------------------------------------------------------------
+ *  Responsive
+ */
+@media only screen and (max-width: @breakpoint-med) {
+    .main.has-sidebar-left {
+        margin-top: 0;
+    }
 }
