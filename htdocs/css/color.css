@@ -228,6 +228,13 @@ th:last-child,
 td:last-child {
   padding-right: 0;
 }
+.table {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+.table table {
+  margin-bottom: 0;
+}
 /**
  * More typography elements
  */

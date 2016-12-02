@@ -224,6 +224,13 @@ th:last-child,
 td:last-child {
   padding-right: 0;
 }
+.table {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.table table {
+  margin-bottom: 0;
+}
 /**
  * More typography elements
  */
@@ -1581,8 +1588,6 @@ div.toc li.selected a::after {
   border-color: #f90;
 }
 .blog-image figcaption {
-  /*padding-left: @figure-caption-margin;
-        padding-right: @figure-caption-margin;*/
   padding: 5px 0.5em 6px;
   color: #f96;
   border-top: 1px solid #c66;
