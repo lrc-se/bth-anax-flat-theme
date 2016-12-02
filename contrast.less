@@ -1,0 +1,283 @@
+/**
+ * Design principles: Contrast and direction (and some typography).
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-bordered.less');
+
+@import url('https://fonts.googleapis.com/css?family=Ultra:400,700|Roboto+Condensed:400,400i,700,700i');
+@font-family-headings: Ultra, "Arial Black", @font-family-arial;
+@font-family-body: "Roboto Condensed", @font-family-arial;
+
+@breakpoint-menu: 975px;
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-standard: #20252b;
+@color-dark: #3f527f;
+@color-med-dark: #5274b6;
+@color-med-light: #98a4bf;
+@color-light: #d0dff8;
+@color-accent: #2040b0;
+
+// Basic colors
+@color-text: @color-dark;
+@color-bg: #f2f4fa;
+@color-bg-main: #fff;
+@color-link: @color-med-dark;
+@color-link-visited: @color-med-light;
+@color-link-hover: @color-link;
+@color-link-visited-hover: @color-link-visited;
+@color-hr: @color-med-light;
+
+// Region colors
+@color-header-bg: @color-accent;
+@color-header-link: @color-bg-main;
+@color-header-link-hover: @color-header-link;
+@color-navbar: @color-bg-main;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-med-dark;
+@color-navbar-active: @color-accent;
+@color-navbar-active-bg: @color-bg-main;
+@color-menu-close: @color-accent;
+@color-menu-bg: @color-bg-main;
+@color-menuitem: @color-dark;
+@color-menuitem-bg: @color-light;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-accent;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-light;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-dark;
+@color-aftermain: @color-dark;
+@color-aftermain-bg: @color-bg;
+@color-aftermain-link: @color-med-dark;
+@color-aftermain-link-hover: @color-dark;
+@color-columnsbelow-bg: @color-bg-main;
+@color-footer-bg: @color-light;
+@color-footer-link: @color-med-dark;
+@color-footer-link-hover: @color-footer-link;
+
+// Component colors
+@color-border: @color-dark;
+@color-notice-bg: @color-light;
+@color-code: @color-dark;
+@color-code-bg: @color-bg;
+@color-figure-caption: @color-dark;
+@color-figure-bordered-caption-bg: @color-bg;
+
+@border-base-color: @color-med-light;
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+@font-size-h1: 2.25em;
+@font-size-h2: 1.5em;
+@font-size-h3: 1.25em;
+@font-size-h4: 1.125em;
+@font-size-h5: 1em;
+@font-size-h6: .875em;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-weight: normal;
+}
+
+blockquote {
+    color: @color-standard;
+    
+    &::before {
+        color: @color-accent;
+        opacity: .9;
+    }
+}
+
+pre code {
+    padding: (@line-height / 2 - 1px) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+    border: 1px solid @color-code-border;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-dark;
+    }
+    td {
+        border-bottom-color: @color-med-light;
+    }
+    tr:last-child td {
+        border-bottom-color: @color-med-dark;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+.wrap-all {
+    border-color: @color-standard;
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-header {
+    border-bottom-color: @color-standard;
+}
+
+.site-logo-text {
+    font-weight: normal;
+}
+
+.rm-default {
+    font-family: @font-family-body;
+    
+    li {
+        font-weight: bold;
+    }
+}
+
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-wrap {
+    border-top-color: @color-standard;
+    border-bottom-color: @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+.sidebar-left {
+    .indent(3em);
+}
+.sidebar-right {
+    .indent(2em, 0);
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.main {
+    .indent();
+}
+.main.has-sidebar-left {
+    border-left-color: @color-med-light;
+}
+.main.has-sidebar-right {
+    padding-right: 1em;
+    border-right-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    border-top-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.inner-wrap-columns-below {
+    border-top-color: @color-dark;
+}
+
+.bottom-column {
+    .indent(3em);
+    border-left-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.footer {
+    font-weight: bold;
+    border-top-color: @color-standard;
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.meta-header {
+    position: relative;
+    left: -3rem;
+
+    @media only screen and (max-width: @breakpoint-small) {
+        left: -2rem;
+    }
+}
+
+.blog-image {
+    padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+    background-color: @color-light;
+    box-shadow: 2px 2px 2px 1px @color-standard;
+    
+    figcaption {
+        padding-bottom: 0;
+        color: @color-standard;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 4) (@figure-caption-margin / 2);
+        
+        figcaption {
+            padding-top: @line-height / 6;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.indent(@distance: 4em, @adjust: 1) {
+    padding-left: @distance;
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        position: relative;
+        left: -(unit(@distance) - @adjust * 1rem);
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            left: -(unit(@distance) - @adjust * 1rem - 1rem);
+        }
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding-left: @distance - 1em;
+    }
+}
+
+.palette li {
+    color: @color-standard;
+}
