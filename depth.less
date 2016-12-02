@@ -57,16 +57,14 @@
 // Component colors
 @color-border: @color-text;
 @color-notice-bg: @color-light;
-@color-notice-border: transparent;
 @color-code: @color-dark;
 @color-code-bg: @color-light;
-@color-code-border: @color-med-dark;
 @color-figure-caption: @color-dark;
 @color-figure-bordered-caption-bg: @color-light;
 
 // Shadows
 @color-shadow: #000;
-@color-shadow-text: fadeout(@color-shadow, 20%);
+@color-shadow-text: fadeout(@color-shadow, 25%);
 
 .shadow(@blur: 10px, @color: @color-shadow) {
     border-radius: 3px;
@@ -132,11 +130,10 @@ blockquote {
 }
 
 pre {
-    border: 1px solid @color-code-border;
     .shadow();
     
     code {
-        padding: (@line-height / 2 - 1px) 1em;
+        padding: (@line-height / 2) 1em;
         color: @color-code;
         background-color: @color-code-bg;
     }
@@ -342,6 +339,9 @@ div.toc li {
 }
 
 .notice {
+    padding-top: @line-height / 2;
+    padding-bottom: @line-height / 2;
+    border: none;
     .shadow(5px);
 }
 

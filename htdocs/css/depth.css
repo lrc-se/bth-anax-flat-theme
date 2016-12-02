@@ -884,7 +884,7 @@ div.toc li.selected::before {
   padding: 10px 1em;
   color: #000;
   background-color: #eee;
-  border: 1px solid transparent;
+  border: 1px solid #000;
 }
 .notice a {
   color: #999;
@@ -1091,36 +1091,35 @@ div.toc li.selected::before {
  *  Typography
  */
 h1 {
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
 }
 h2 {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.75);
 }
 h3 {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
 }
 h4,
 h5,
 h6,
 dt {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 blockquote::before {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
   opacity: .75;
 }
 pre {
-  border: 1px solid #777;
   border-radius: 3px;
   box-shadow: 1px 1px 10px 1px #000;
 }
 pre code {
-  padding: 10px 1em;
+  padding: 11px 1em;
   color: #555;
   background-color: #eee;
 }
 th {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 .table th {
   border-bottom-color: #777;
@@ -1153,12 +1152,12 @@ th {
   z-index: 3;
 }
 .site-logo-text {
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
 }
 .rm-default,
 .rm-button:not(.rm-clicked) .rm-button-face-1,
 .rm-button.rm-clicked .rm-button-face-2 {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 .rm-default li.selected,
 .rm-default li.selected-parent {
@@ -1184,7 +1183,7 @@ th {
   z-index: 1;
 }
 .breadcrumb-list {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 .breadcrumb-list ul {
   line-height: 33px;
@@ -1289,6 +1288,9 @@ div.toc li.selected::before {
   box-shadow: 1px 1px 10px 1px #000;
 }
 .notice {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border: none;
   border-radius: 3px;
   box-shadow: 1px 1px 5px 1px #000;
 }
