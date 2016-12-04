@@ -2,6 +2,17 @@
  * Resets for full-width themes.
  */
 
+@padding-horiz: 1em;
+
+.padding(@side) {
+    padding-@{side}: @padding-horiz;
+}
+.padding(@side) when not (@padding-horiz = 1em) {
+    @media only screen and (max-width: @breakpoint-small) {
+        padding-@{side}: 1em;
+    }
+}
+
 .wrap-all {
     max-width: none;
     margin: 0;
@@ -39,11 +50,11 @@
 
 .sidebar-left,
 .main {
-    padding-left: 1em;
+    .padding(left);
 }
 .sidebar-right,
 .main {
-    padding-right: 1em;
+    .padding(right);
 }
 
 @media only screen and (max-width: @breakpoint-med) {

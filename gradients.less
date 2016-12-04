@@ -1,0 +1,333 @@
+/**
+ * Design elements: Gradients/images.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-fullwidth.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-grey: #888;
+@color-grey-lighter: #eee;
+@color-grey-light: #bbb;
+@color-grey-dark: #555;
+@color-grey-darker: #222;
+
+@color-primary: #af300b;
+@color-primary-lighter: #e36e48;
+@color-primary-light: #d4451c;
+@color-primary-dark: #912100;
+@color-primary-darker: #6b1800;
+
+@color-secondary1: #0d4b70;
+@color-secondary1-lighter: #346e91;
+@color-secondary1-light: #185e87;
+@color-secondary1-dark: #053c5c;
+@color-secondary1-darker: #022c44;
+
+@color-secondary2: #5a9f0a;
+@color-secondary2-lighter: #8dce42;
+@color-secondary2-light: #73c01a;
+@color-secondary2-dark: #468300;
+@color-secondary2-darker: #346100;
+
+// Basic colors
+@color-text: @color-grey-darker;
+@color-bg: @color-grey-darker;
+@color-bg-main: @color-grey-lighter;
+@color-link: lighten(saturate(@color-secondary1-lighter, 25%), 5%);
+@color-link-visited: @color-secondary1-dark;
+@color-link-hover: saturate(@color-secondary1-light, 20%);
+@color-link-visited-hover: @color-secondary1-darker;
+@color-hr: @color-grey-light;
+
+// Region colors
+@color-header-bg: @color-primary-dark;
+@color-header-link: @color-bg-main;
+@color-header-link-hover: @color-bg-main;
+@color-navbar: @color-bg-main;
+@color-navbar-hover: @color-bg-main;
+@color-navbar-hover-bg: @color-primary-darker;
+@color-navbar-active: @color-bg-main;
+@color-navbar-active-bg: @color-secondary1-dark;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-secondary2-darker;
+@color-menuitem: @color-navbar;
+@color-menuitem-bg: @color-secondary2-dark;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-secondary1;
+@color-flash-bg: @color-secondary1-dark;
+@color-breadcrumb: @color-text;
+@color-breadcrumb-bg: @color-secondary2-dark;
+@color-breadcrumb-link: @color-secondary1-darker;
+@color-breadcrumb-link-hover: @color-breadcrumb-link;
+@color-aftermain: @color-grey-lighter;
+@color-aftermain-bg: @color-secondary1-dark;
+@color-aftermain-link: @color-secondary1-lighter;
+@color-aftermain-link-hover: @color-aftermain-link;
+@color-columnsbelow-bg: @color-secondary2-dark;
+@color-columnsbelow-link: @color-secondary1-dark;
+@color-columnsbelow-link-visited: @color-grey-darker;
+@color-columnsbelow-link-hover: @color-columnsbelow-link;
+@color-columnsbelow-link-visited-hover: @color-columnsbelow-link-visited;
+@color-footer: @color-primary-lighter;
+@color-footer-bg: @color-primary-dark;
+@color-footer-link: @color-grey-lighter;
+@color-footer-link-hover: @color-grey-lighter;
+
+// Component colors
+@color-border: @color-grey-dark;
+@color-notice: @color-grey-lighter;
+@color-notice-bg: @color-primary;
+@color-notice-link: @color-secondary1;
+@color-notice-link-visited: @color-grey-light;
+@color-notice-link-hover: @color-notice-link;
+@color-notice-link-visited-hover: @color-notice-link-visited;
+@color-code: @color-grey-light;
+@color-code-bg: @color-secondary2-darker;
+@color-figure-caption: @color-grey;
+@color-figure-bordered-caption-bg: #fff;
+
+@padding-horiz: 2em;
+
+.gradient(@color, @base: #000) {
+    background-image: linear-gradient(to right, @base, @color calc(50% ~"-" (@max-width / 2)), @color calc(50% ~"+" (@max-width / 2)), @base);
+}
+
+
+/** --------------------------------------------------------------
+ *  Global element styles
+ */
+code {
+    color: @color-secondary2-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+@media only screen and (min-width: (@breakpoint-mini + 1px)) {
+    h1 {
+        position: relative;
+        z-index: 1;
+        
+        &::after {
+            content: url('../img/stamp.png');
+            position: absolute;
+            top: .2em;
+            right: 0;
+            height: 36px;
+            display: block;
+        }
+    }
+}
+
+pre code {
+    padding: (@line-height / 2) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-primary-dark;
+    }
+    
+    td {
+        border-bottom-color: @color-grey-light;
+    }
+    
+    tr:last-child td {
+        border-bottom-color: @color-secondary1-dark;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+body {
+    .gradient(@color-grey-darker);
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.outer-wrap-header {
+    .gradient(@color-primary-darker);
+}
+
+.site-logo-text {
+    text-shadow: 3px 3px 2px @color-grey-darker;
+}
+
+
+/** --------------------------------------------------------------
+ *  Flash
+ */
+.outer-wrap-flash {
+    .gradient(@color-secondary1-dark);
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.outer-wrap-breadcrumb {
+    .gradient(@color-secondary2-darker);
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+@media only screen and (min-width: (@breakpoint-med + 1px)) {
+    .sidebar-left::after {
+        content: "";
+        height: 50px;
+        background: url('../img/arrow-right.png') no-repeat;
+        display: block;
+    }
+    .sidebar-right::after {
+        content: "";
+        height: 50px;
+        background: url('../img/arrow-left.png') no-repeat;
+        display: block;
+    }
+}
+
+div.toc li {
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &::before {
+        color: @color-secondary1;
+        opacity: 1;
+    }
+    
+    &.selected {
+        a {
+            color: @color-primary;
+            display: inline-block;
+            
+            &:hover {
+                color: @color-primary;
+            }
+        }
+        
+        &::before {
+            color: @color-primary;
+            opacity: 1;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.outer-wrap-main {
+    .gradient(@color-grey-light);
+}
+.inner-wrap-main {
+    background-color: @color-bg-main;
+}
+
+@media only screen and (min-width: (@breakpoint-small + 1px)) {
+    .article > p:last-child,
+    .next-previous {
+        margin-bottom: @line-height;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.outer-wrap-after-main {
+    .gradient(@color-secondary1-darker);
+}
+
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.outer-wrap-columns-below {
+    .gradient(@color-secondary2-darker);
+}
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.outer-wrap-footer {
+    .gradient(@color-primary-darker);
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.notice {
+    padding: (@line-height / 2) 1em;
+    border: none;
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    padding: (@line-height / 2) @figure-caption-margin;
+    background-color: @color-figure-bordered-caption-bg;
+    box-shadow: 2px 2px 2px @color-text;
+    
+    &.left {
+        -ms-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    
+    &.right {
+        -ms-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    
+    figcaption {
+        padding-bottom: 0;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+        
+        &.left {
+            -ms-transform: rotate(-1.5deg);
+            transform: rotate(-1.5deg);
+        }
+        
+        &.right {
+            -ms-transform: rotate(1.5deg);
+            transform: rotate(1.5deg);
+        }
+    }
+
+    @media only screen and (max-width: @breakpoint-mini) {
+        &.half,
+        &.third {
+            -ms-transform: none;
+            transform: none;
+        }
+    }
+}
