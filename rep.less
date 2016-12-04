@@ -130,6 +130,13 @@ body {
 /** --------------------------------------------------------------
  *  Typography
  */
+blockquote {
+    &::before {
+        color: @color-accent;
+        opacity: .9;
+    }
+}
+
 pre code {
     border: @border-width solid @color-code-border;
     padding: (@line-height / 2 - @border-width) 1em;

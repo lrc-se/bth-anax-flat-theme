@@ -1121,6 +1121,10 @@ body {
 /** --------------------------------------------------------------
  *  Typography
  */
+blockquote::before {
+  color: #2040b0;
+  opacity: .9;
+}
 pre code {
   border: 1px solid #20252b;
   padding: 10px 1em;

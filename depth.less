@@ -238,20 +238,11 @@ div.toc li {
     }
     
     &.selected {
-        a {
-            padding: 0 3px;
-            color: @color-bg-main;
-            background-color: @color-text;
-            display: inline-block;
-            
-            @media only screen and (max-width: @breakpoint-med) {
-                padding: 0 5px;
-            }
-            
-            &:hover {
-                color: @color-bg-main;
-                text-decoration: none;
-            }
+        .text-shadow();
+        
+        a,
+        a:hover {
+            color: @color-text;
         }
         
         &::before {

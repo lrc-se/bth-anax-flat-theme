@@ -26,7 +26,7 @@
 
 // Basic colors
 @color-text: @color-dark;
-@color-bg: #f2f4fa;
+@color-bg: #e6e8ee;
 @color-bg-main: #fff;
 @color-link: @color-med-dark;
 @color-link-visited: @color-med-light;
@@ -242,12 +242,16 @@ ul.toc {
 
 .blog-image {
     padding: (@line-height / 3) (@figure-caption-margin / 1.5);
-    background-color: @color-light;
-    box-shadow: 2px 2px 2px 1px @color-standard;
+    background-color: @color-dark;
+    box-shadow: 3px 3px 2px #000;
+    
+    &.border {
+        border-color: #000;
+    }
     
     figcaption {
         padding-bottom: 0;
-        color: @color-standard;
+        color: @color-bg-main;
         font-style: italic;
         text-align: center;
     }

@@ -403,7 +403,7 @@ hr {
   padding-left: 0.75em;
   padding-right: 0.75em;
   color: #3f527f;
-  background-color: #f2f4fa;
+  background-color: #e6e8ee;
 }
 .figure.image-border {
   margin-bottom: 20px;
@@ -558,7 +558,7 @@ html {
 }
 body {
   color: #3f527f;
-  background-color: #f2f4fa;
+  background-color: #e6e8ee;
   font: 1em/1.375 "Roboto Condensed", Arial, Helvetica, sans-serif;
   overflow-y: scroll;
 }
@@ -799,7 +799,7 @@ div.toc li.selected::before {
 .after-main {
   padding: 0 1em;
   color: #3f527f;
-  background-color: #f2f4fa;
+  background-color: #e6e8ee;
 }
 .after-main a {
   color: #5274b6;
@@ -1161,7 +1161,7 @@ ol {
 pre code {
   padding: 10px 1em;
   color: #3f527f;
-  background-color: #f2f4fa;
+  background-color: #e6e8ee;
   border: 1px solid #3f527f;
 }
 .table th {
@@ -1362,12 +1362,15 @@ ul.toc {
 }
 .blog-image {
   padding: 7.33333333px 0.5em;
-  background-color: #d0dff8;
-  box-shadow: 2px 2px 2px 1px #20252b;
+  background-color: #3f527f;
+  box-shadow: 3px 3px 2px #000;
+}
+.blog-image.border {
+  border-color: #000;
 }
 .blog-image figcaption {
   padding-bottom: 0;
-  color: #20252b;
+  color: #fff;
   font-style: italic;
   text-align: center;
 }

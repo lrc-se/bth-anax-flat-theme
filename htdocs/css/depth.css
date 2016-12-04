@@ -1197,20 +1197,12 @@ div.toc li a {
 div.toc li a:hover {
   text-decoration: underline;
 }
-div.toc li.selected a {
-  padding: 0 3px;
-  color: #fff;
-  background-color: #000;
-  display: inline-block;
+div.toc li.selected {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
-@media only screen and (max-width: 815px) {
-  div.toc li.selected a {
-    padding: 0 5px;
-  }
-}
+div.toc li.selected a,
 div.toc li.selected a:hover {
-  color: #fff;
-  text-decoration: none;
+  color: #000;
 }
 div.toc li.selected::before {
   color: #000;
