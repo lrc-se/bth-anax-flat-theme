@@ -111,18 +111,13 @@
 
 
 // Grid visualization
-.route-typography .inner-wrap-main:hover,
-.grid-horiz .inner-wrap-main {
-    background-image: url('../img/grid/horizontal-grid-24.png');
+@grid-horiz-bg: '../img/grid/horizontal-grid-24.png';
+
+.show-baseline-grid() {
     background-position: 0 -(@line-height * 1.5);
     
     @media only screen and (max-width: @breakpoint-small) {
         background-position: 0 -(@line-height);
-    }
-}
-.grid-horiz-top .wrap-all {
-    &::after {
-        background-image: url('../img/grid/horizontal-grid-24.png');
     }
 }
 
