@@ -499,10 +499,10 @@ article.blog {
 .route-grid .wrap-all:hover .inner-wrap-columns-below,
 .grid-vert .wrap-all .inner-wrap-columns-below {
   background-image: url('../img/grid/grid940x12x60x20-nomargin.png');
-  background-repeat: repeat-y;
   background-size: 100% auto;
+  background-repeat: repeat-y;
 }
-@media (min-width: 1100px) {
+@media only screen and (min-width: 1100px) {
   .route-grid .wrap-all:hover .inner-wrap-main,
   .grid-vert .wrap-all .inner-wrap-main,
   .route-grid .wrap-all:hover .inner-wrap-columns-below,
@@ -523,17 +523,24 @@ article.blog {
   z-index: 10;
   opacity: .5;
   background-image: url('../img/grid/grid940x12x60x20-nomargin.png');
-  background-repeat: repeat-y;
   background-size: 100% auto;
+  background-repeat: repeat-y;
 }
-@media (min-width: 1100px) {
+@media only screen and (min-width: 1100px) {
   .grid-vert-top .wrap-all::after {
     background-size: 1100px auto;
   }
 }
 .route-typography .inner-wrap-main:hover,
 .grid-horiz .inner-wrap-main {
-  background-image: url('../img/grid/horizontal-grid-22.png');
+  background-image: url('../img/grid/horizontal-grid-24.png');
+  background-position: 0 -36px;
+}
+@media only screen and (max-width: 639px) {
+  .route-typography .inner-wrap-main:hover,
+  .grid-horiz .inner-wrap-main {
+    background-position: 0 -24px;
+  }
 }
 .grid-horiz-top .wrap-all {
   position: relative;
@@ -547,7 +554,13 @@ article.blog {
   bottom: 0;
   z-index: 10;
   opacity: .8;
-  background-image: url('../img/grid/horizontal-grid-22.png');
+  background-image: url('../img/grid/horizontal-grid-24.png');
+  background-position: 0 -36px;
+}
+@media only screen and (max-width: 639px) {
+  .grid-horiz-top .wrap-all::after {
+    background-position: 0 -24px;
+  }
 }
 /** --------------------------------------------------------------
  *  Base
@@ -1140,20 +1153,6 @@ div.toc li.selected::before {
 /** --------------------------------------------------------------
  *  Colors
  */
-.route-typography .inner-wrap-main:hover,
-.grid-horiz .inner-wrap-main {
-  background-image: url('../img/grid/horizontal-grid-24.png');
-  background-position: 0 -36px;
-}
-@media only screen and (max-width: 639px) {
-  .route-typography .inner-wrap-main:hover,
-  .grid-horiz .inner-wrap-main {
-    background-position: 0 -24px;
-  }
-}
-.grid-horiz-top .wrap-all::after {
-  background-image: url('../img/grid/horizontal-grid-24.png');
-}
 /** --------------------------------------------------------------
  *  Scaffolding
  */
