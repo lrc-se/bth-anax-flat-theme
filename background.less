@@ -1,5 +1,5 @@
 /**
- * Light theme.
+ * Design elements: Background/lines.
  */
 
 @import url('typography-defaults.less');
@@ -164,7 +164,7 @@ div.toc li {
  *  Main
  */
 .outer-wrap-main {
-    opacity: .8;
+    background-color: fadeout(@color-bg-main, 20%);
 }
 
 .main.has-sidebar-left {
@@ -179,6 +179,7 @@ div.toc li {
  *  After-Main
  */
 .after-main {
+    background-color: fadeout(@color-aftermain-bg, 15%);
     border-top-style: dashed;
     border-top-color: @color-med-dark;
 }
