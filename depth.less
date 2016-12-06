@@ -74,6 +74,11 @@
 .region-shadow(@distance, @level) {
     position: relative;
     box-shadow: 0 @distance (@level + 2px) 1px fadeout(@color-shadow, (3 - unit(@level)) * 20%);
+}
+.region-shadow(@distance, @level) when (unit(@distance) > 0) {
+    z-index: @level + 2;
+}
+.region-shadow(@distance, @level) when (unit(@distance) < 0) {
     z-index: @level;
 }
 
