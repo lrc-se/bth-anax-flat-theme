@@ -1254,11 +1254,11 @@ div.toc li.selected::before {
   bottom: 0;
   color: #eee;
   background-color: rgba(0, 0, 0, 0.667);
+  padding-top: 3.66666667px;
+  padding-bottom: 3.66666667px;
   text-align: center;
-}
-@media only screen and (max-width: 639px) {
-  .blog-image figcaption {
-    padding-top: 3.66666667px;
-    padding-bottom: 3.66666667px;
-  }
+  /*@media only screen and (max-width: @breakpoint-small) {
+            padding-top: @line-height / 6;
+            padding-bottom: @line-height / 6;
+        }*/
 }
