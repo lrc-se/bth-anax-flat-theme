@@ -402,7 +402,7 @@ hr {
 .figure.border figcaption {
   padding-left: 0.75em;
   padding-right: 0.75em;
-  color: #666;
+  color: #555;
   background-color: transparent;
 }
 .figure.image-border {
@@ -430,7 +430,7 @@ hr {
   min-width: 100%;
   max-width: 100%;
   padding: 5.5px 0;
-  color: #666;
+  color: #555;
   background-color: transparent;
   font-size: 0.875em;
   line-height: 1.57142857;
@@ -578,11 +578,11 @@ section {
  *  Global element styles
  */
 a {
-  color: #888;
+  color: #777;
   text-decoration: underline;
 }
 a:hover {
-  color: #666;
+  color: #555;
 }
 img {
   max-width: 100%;
@@ -682,7 +682,7 @@ legend {
  */
 .breadcrumb-wrap {
   padding: 0 1em;
-  color: #666;
+  color: #555;
   background-color: #fff;
 }
 .breadcrumb-list ul {
@@ -710,11 +710,11 @@ legend {
   display: none;
 }
 .breadcrumb-list ul li a {
-  color: #666;
+  color: #555;
   text-decoration: none;
 }
 .breadcrumb-list ul li a:hover {
-  color: #666;
+  color: #555;
   text-decoration: underline;
 }
 /** --------------------------------------------------------------
@@ -736,7 +736,7 @@ legend {
   color: #aaa;
 }
 .sidebar a:visited:hover {
-  color: #888;
+  color: #777;
 }
 .sidebar-left {
   padding-right: 0;
@@ -785,7 +785,7 @@ div.toc li.selected::before {
   color: #aaa;
 }
 .main a:visited:hover {
-  color: #888;
+  color: #777;
 }
 .article > *:last-child {
   margin-bottom: 0;
@@ -798,14 +798,14 @@ div.toc li.selected::before {
  */
 .after-main {
   padding: 0 1em;
-  color: #666;
+  color: #555;
   background-color: #fff;
 }
 .after-main a {
   color: #aaa;
 }
 .after-main a:hover {
-  color: #888;
+  color: #777;
 }
 .byline {
   padding: 11px 0;
@@ -836,16 +836,16 @@ div.toc li.selected::before {
   overflow: hidden;
 }
 .columns-below a {
-  color: #888;
+  color: #777;
 }
 .columns-below a:hover {
-  color: #666;
+  color: #555;
 }
 .columns-below a:visited {
   color: #aaa;
 }
 .columns-below a:visited:hover {
-  color: #888;
+  color: #777;
 }
 .bottom-column {
   margin-top: 11px;
@@ -866,10 +866,10 @@ div.toc li.selected::before {
   margin-bottom: 11px;
 }
 .footer a {
-  color: #888;
+  color: #777;
 }
 .footer a:hover {
-  color: #666;
+  color: #555;
 }
 /** --------------------------------------------------------------
  *  Global styles
@@ -887,16 +887,16 @@ div.toc li.selected::before {
   border: 1px solid #000;
 }
 .notice a {
-  color: #888;
+  color: #777;
 }
 .notice a:hover {
-  color: #666;
+  color: #555;
 }
 .notice a:visited {
   color: #aaa;
 }
 .notice a:visited:hover {
-  color: #888;
+  color: #777;
 }
 .table {
   overflow-x: auto;
@@ -1143,12 +1143,12 @@ div.toc li.selected::before {
  */
 pre code {
   padding: 10px 1em;
-  color: #666;
+  color: #555;
   background-color: #fff;
-  border: 1px solid #888;
+  border: 1px solid #777;
 }
 .table th {
-  border-bottom-color: #888;
+  border-bottom-color: #777;
 }
 .table td {
   border-bottom-color: #aaa;
@@ -1160,7 +1160,7 @@ pre code {
   text-shadow: 2px 2px 1px #aaa;
 }
 .rm-mobile li {
-  box-shadow: 0 0 1px #666;
+  box-shadow: 0 0 1px #555;
 }
 /** --------------------------------------------------------------
  *  Breadcrumb
@@ -1210,7 +1210,7 @@ div.toc li.selected::before {
  */
 .after-main {
   border-top-style: dashed;
-  border-top-color: #888;
+  border-top-color: #777;
 }
 /** --------------------------------------------------------------
  *  Columns-Below
