@@ -11,6 +11,7 @@
     padding: 0;
     background-color: @color-figure-bg;
     display: inline-block;
+    vertical-align: bottom;
     box-sizing: border-box;
     
     &.left {
@@ -164,6 +165,14 @@
         p {
             margin: 0;
         }
+    }
+    
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+        margin-top: @line-height / 2;
     }
     
     @media only screen and (max-width: @breakpoint-small) {

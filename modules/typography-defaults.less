@@ -20,21 +20,21 @@ h1 {
     .font-size(@font-size-h1);
     
     // If heading below h1, then assume larger margin-top
-    & ~ h2,
-    & ~ h3,
-    & ~ h4,
-    & ~ h5,
-    & ~ h6 {
+    ~ h2,
+    ~ h3,
+    ~ h4,
+    ~ h5,
+    ~ h6 {
         margin-top: @line-height * 1.5;
         margin-bottom: @line-height / 2;
     }
     
     // Single margin when subheading follows directly
-    & + h2,
-    & ~ h2 + h3,
-    & ~ h3 + h4,
-    & ~ h4 + h5,
-    & ~ h5 + h6 {
+    + h2,
+    ~ h2 + h3,
+    ~ h3 + h4,
+    ~ h4 + h5,
+    ~ h5 + h6 {
         .margins();
     }
 }
@@ -60,12 +60,12 @@ h6 {
 }
 
 hr {
-    & + h1,
-    & + h2,
-    & + h3,
-    & + h4,
-    & + h5,
-    & + h6 {
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
         .margins();
     }
 }
@@ -165,13 +165,8 @@ ol {
     .margins();
     padding-left: 1.5em;
 
-    p { 
-        margin-top: @line-height / 2;
-        margin-bottom: @line-height / 2;
-    }
-
-    & ul,
-    & ol {
+    ul,
+    ol {
         margin: 0;
     }
 }
