@@ -1,0 +1,235 @@
+/**
+ * Design elements: Background/lines.
+ */
+
+@import url('typography-defaults.less');
+@import url('base.less');
+@import url('theme-bordered.less');
+@import url('theme-fonts.less');
+
+
+/** --------------------------------------------------------------
+ *  Colors
+ */
+// Theme palette
+@color-dark: #555;
+@color-med-dark: #777;
+@color-med-light: #aaa;
+@color-light: #ddd;
+
+// Basic colors
+@color-text: #000;
+@color-bg: #eee;
+@color-bg-main: #fff;
+@color-link: #3254b6;
+@color-link-visited: #6d7aad;
+@color-link-hover: darken(@color-link, 5%);
+@color-link-visited-hover: saturate(@color-link-visited, 10%);
+@color-hr: @color-dark;
+
+// Region colors
+@color-header-bg: @color-bg-main;
+@color-header-link: @color-text;
+@color-header-link-hover: @color-text;
+@color-navbar: @color-text;
+@color-navbar-hover: @color-navbar;
+@color-navbar-hover-bg: @color-light;
+@color-navbar-active: @color-bg-main;
+@color-navbar-active-bg: @color-text;
+@color-menu-close: @color-navbar;
+@color-menu-bg: @color-bg-main;
+@color-menuitem: @color-navbar;
+@color-menuitem-bg: @color-light;
+@color-menuitem-active: @color-bg-main;
+@color-menuitem-active-bg: @color-text;
+@color-breadcrumb: @color-dark;
+@color-breadcrumb-bg: @color-bg-main;
+@color-breadcrumb-link: @color-dark;
+@color-breadcrumb-link-hover: @color-dark;
+@color-aftermain: @color-dark;
+@color-aftermain-bg: @color-bg-main;
+@color-aftermain-link: @color-med-light;
+@color-aftermain-link-hover: @color-med-dark;
+@color-columnsbelow-bg: @color-bg-main;
+@color-footer-bg: @color-bg-main;
+
+// Component colors
+@color-border: @color-text;
+@color-notice-bg: @color-light;
+@color-notice-border: @color-text;
+@color-code: @color-dark;
+@color-code-bg: @color-bg-main;
+@color-code-border: @color-med-dark;
+@color-figure-caption: @color-dark;
+
+// Borders
+@border-region-width: 2px;
+@border-column-width: @border-region-width;
+@border-column-style: dotted;
+
+
+/** --------------------------------------------------------------
+ *  Typography
+ */
+pre code {
+    padding: (@line-height / 2 - 1px) 1em;
+    color: @color-code;
+    background-color: @color-code-bg;
+    border: 1px solid @color-code-border;
+}
+
+.table {
+    th {
+        border-bottom-color: @color-med-dark;
+    }
+    
+    td {
+        border-bottom-color: @color-med-light;
+    }
+}
+
+hr {
+    margin-top: -(@border-column-width);
+    border-top-style: dashed;
+    border-top-width: @border-column-width;
+}
+
+
+/** --------------------------------------------------------------
+ *  Base
+ */
+body {
+    background: @color-bg url('../img/bg-mountains.jpg') 50% 50%/cover fixed;
+}
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+.site-logo-text {
+    text-shadow: 2px 2px 1px @color-med-light;
+}
+
+.rm-mobile li {
+    box-shadow: 0 0 1px @color-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb-list ul {
+    line-height: @line-height * 1.5;
+}
+
+
+/** --------------------------------------------------------------
+ *  Sidebar
+ */
+div.toc li {
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    &.selected {
+        a,
+        a:hover {
+            color: @color-text;
+        }
+        
+        &::before {
+            color: @color-text;
+            opacity: 1;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Main
+ */
+.outer-wrap-main {
+    background-color: fadeout(@color-bg-main, 20%);
+}
+
+.main.has-sidebar-left {
+    border-left-color: @color-med-dark;
+}
+.main.has-sidebar-right {
+    border-right-color: @color-med-dark;
+}
+
+
+/** --------------------------------------------------------------
+ *  After-Main
+ */
+.after-main {
+    background-color: fadeout(@color-aftermain-bg, 15%);
+    border-top-style: dashed;
+    border-top-color: @color-med-dark;
+}
+
+/** --------------------------------------------------------------
+ *  Columns-Below
+ */
+.bottom-column {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: (@line-height / 2) 1em;
+    border-left-color: @color-med-light;
+}
+
+
+/** --------------------------------------------------------------
+ *  Blog
+ */
+.blog-image {
+    border: 2px solid @color-border;
+    
+    figcaption {
+        padding: (@line-height / 4 - 1px) @figure-caption-margin (@line-height / 4 - 1px);
+        background-image: linear-gradient(@color-bg-main, @color-light);
+        border-top: 2px solid @color-text;
+        
+        @media only screen and (max-width: @breakpoint-small) {
+            padding-top: @line-height / 6 - 1px;
+            padding-bottom: @line-height / 6 - 1px;
+        }
+    }
+}
+
+
+/** --------------------------------------------------------------
+ *  Global styles
+ */
+.content-spacing() {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: @line-height 2em;
+}
+
+
+/** --------------------------------------------------------------
+ *  Responsive
+ */
+@media only screen and (max-width: @max-width) {
+    .wrap-all {
+        border-top: @border-wrap-width @border-wrap-style @border-base-color;
+        border-bottom: @border-wrap-width @border-wrap-style @border-base-color;
+    }
+}
+
+@media only screen and (max-width: @breakpoint-med) {
+    .sidebar-left {
+        padding-bottom: 0;
+    }
+    
+    .main.has-sidebar {
+        margin-top: 0;
+        padding-top: @line-height - @border-column-width;
+    }
+}
