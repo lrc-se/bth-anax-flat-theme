@@ -180,11 +180,6 @@ ol {
   margin-bottom: 22px;
   padding-left: 1.5em;
 }
-ul p,
-ol p {
-  margin-top: 11px;
-  margin-bottom: 11px;
-}
 ul ul,
 ol ul,
 ul ol,
@@ -312,6 +307,7 @@ hr {
   padding: 0;
   background-color: transparent;
   display: inline-block;
+  vertical-align: bottom;
   box-sizing: border-box;
 }
 .figure.left {
@@ -445,6 +441,13 @@ hr {
 .figure figcaption p {
   margin: 0;
 }
+.figure + h2,
+.figure + h3,
+.figure + h4,
+.figure + h5,
+.figure + h6 {
+  margin-top: 11px;
+}
 @media only screen and (max-width: 639px) {
   .figure.quarter {
     max-width: 33%;
@@ -532,6 +535,16 @@ article.blog {
     background-size: 1100px auto;
   }
 }
+html.vgrid .inner-wrap {
+  background-image: url('../img/grid/grid940x12x60x20-nomargin.png');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+}
+@media only screen and (min-width: 1100px) {
+  html.vgrid .inner-wrap {
+    background-size: 1100px auto;
+  }
+}
 .route-typography .inner-wrap-main:hover,
 .grid-horiz .inner-wrap-main {
   background-image: url('../img/grid/horizontal-grid-22.png');
@@ -548,6 +561,9 @@ article.blog {
   bottom: 0;
   z-index: 10;
   opacity: .8;
+  background-image: url('../img/grid/horizontal-grid-22.png');
+}
+html.hgrid .inner-wrap {
   background-image: url('../img/grid/horizontal-grid-22.png');
 }
 /** --------------------------------------------------------------
