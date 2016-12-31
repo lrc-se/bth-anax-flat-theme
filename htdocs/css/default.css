@@ -594,11 +594,11 @@ section {
  *  Global element styles
  */
 a {
-  color: #3254b6;
+  color: #2e50b8;
   text-decoration: underline;
 }
 a:hover {
-  color: #2d4ba2;
+  color: #2947a4;
 }
 img {
   max-width: 100%;
@@ -752,10 +752,10 @@ legend {
   }
 }
 .sidebar a:visited {
-  color: #6d7aad;
+  color: #6a78ad;
 }
 .sidebar a:visited:hover {
-  color: #6273b8;
+  color: #5e71b9;
 }
 .sidebar-left {
   padding-right: 0;
@@ -804,10 +804,10 @@ div.toc li.selected::before {
   }
 }
 .main a:visited {
-  color: #6d7aad;
+  color: #6a78ad;
 }
 .main a:visited:hover {
-  color: #6273b8;
+  color: #5e71b9;
 }
 .article > *:last-child {
   margin-bottom: 0;
@@ -824,10 +824,10 @@ div.toc li.selected::before {
   background-color: #fff;
 }
 .after-main a {
-  color: #aaa;
+  color: #2e50b8;
 }
 .after-main a:hover {
-  color: #777;
+  color: #2947a4;
 }
 .byline {
   padding: 11px 0;
@@ -858,16 +858,16 @@ div.toc li.selected::before {
   overflow: hidden;
 }
 .columns-below a {
-  color: #3254b6;
+  color: #2e50b8;
 }
 .columns-below a:hover {
-  color: #2d4ba2;
+  color: #2947a4;
 }
 .columns-below a:visited {
-  color: #6d7aad;
+  color: #6a78ad;
 }
 .columns-below a:visited:hover {
-  color: #6273b8;
+  color: #5e71b9;
 }
 .bottom-column {
   margin-top: 11px;
@@ -888,10 +888,10 @@ div.toc li.selected::before {
   margin-bottom: 11px;
 }
 .footer a {
-  color: #3254b6;
+  color: #2e50b8;
 }
 .footer a:hover {
-  color: #2d4ba2;
+  color: #2947a4;
 }
 /** --------------------------------------------------------------
  *  Global styles
@@ -909,16 +909,16 @@ div.toc li.selected::before {
   border: 1px solid #000;
 }
 .notice a {
-  color: #3254b6;
+  color: #2e50b8;
 }
 .notice a:hover {
-  color: #2d4ba2;
+  color: #2947a4;
 }
 .notice a:visited {
-  color: #6d7aad;
+  color: #6a78ad;
 }
 .notice a:visited:hover {
-  color: #6273b8;
+  color: #5e71b9;
 }
 .table {
   overflow-x: auto;
@@ -1257,6 +1257,7 @@ div.toc li.selected::before {
   padding: 4.5px 0.75em 4.5px;
   background-image: linear-gradient(#fff, #ddd);
   border-top: 2px solid #000;
+  text-align: center;
 }
 @media only screen and (max-width: 639px) {
   .blog-image figcaption {

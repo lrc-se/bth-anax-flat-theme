@@ -21,8 +21,8 @@
 @color-text: #000;
 @color-bg: #eee;
 @color-bg-main: #fff;
-@color-link: #3254b6;
-@color-link-visited: #6d7aad;
+@color-link: #2e50b8;
+@color-link-visited: #6a78ad;
 @color-link-hover: darken(@color-link, 5%);
 @color-link-visited-hover: saturate(@color-link-visited, 10%);
 @color-hr: @color-dark;
@@ -48,8 +48,6 @@
 @color-breadcrumb-link-hover: @color-dark;
 @color-aftermain: @color-dark;
 @color-aftermain-bg: @color-bg-main;
-@color-aftermain-link: @color-med-light;
-@color-aftermain-link-hover: @color-med-dark;
 @color-columnsbelow-bg: @color-bg-main;
 @color-footer-bg: @color-bg-main;
 
@@ -194,6 +192,7 @@ div.toc li {
         padding: (@line-height / 4 - 1px) @figure-caption-margin (@line-height / 4 - 1px);
         background-image: linear-gradient(@color-bg-main, @color-light);
         border-top: 2px solid @color-text;
+        text-align: center;
         
         @media only screen and (max-width: @breakpoint-small) {
             padding-top: @line-height / 6 - 1px;
