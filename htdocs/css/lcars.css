@@ -1481,18 +1481,6 @@ div.toc li a {
   border-radius: 1em;
   text-decoration: none;
   display: block;
-  /*&::after {
-                content: "";
-                position: absolute;
-                right: -(@line-height / 1.5 + @gap-horiz);
-                top: 0;
-                width: @line-height / 1.5;
-                height: 100%;
-                background-color: @color-4;
-                border-left: @gap-horiz solid @color-bg;
-                border-radius: 0 50% 50% 0;
-                display: block;
-            }*/
 }
 div.toc li a:visited {
   color: #000;
