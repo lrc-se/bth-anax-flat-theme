@@ -186,17 +186,21 @@ div.toc li {
  *  Blog
  */
 .blog-image {
-    border: 2px solid @color-border;
+    padding: (@line-height / 3) (@figure-caption-margin / 1.5);
+    background-color: @color-bg-main;
+    box-shadow: 0 0 3px @color-text;
     
     figcaption {
-        padding: (@line-height / 4 - 1px) @figure-caption-margin (@line-height / 4 - 1px);
-        background-image: linear-gradient(@color-bg-main, @color-light);
-        border-top: 2px solid @color-text;
+        padding-bottom: 0;
+        font-style: italic;
         text-align: center;
+    }
+    
+    @media only screen and (max-width: @breakpoint-small) {
+        padding: (@line-height / 4) (@figure-caption-margin / 2);
         
-        @media only screen and (max-width: @breakpoint-small) {
-            padding-top: @line-height / 6 - 1px;
-            padding-bottom: @line-height / 6 - 1px;
+        figcaption {
+            padding-top: @line-height / 6;
         }
     }
 }

@@ -1251,18 +1251,21 @@ div.toc li.selected::before {
  *  Blog
  */
 .blog-image {
-  border: 2px solid #000;
+  padding: 7.33333333px 0.5em;
+  background-color: #fff;
+  box-shadow: 0 0 3px #000;
 }
 .blog-image figcaption {
-  padding: 4.5px 0.75em 4.5px;
-  background-image: linear-gradient(#fff, #ddd);
-  border-top: 2px solid #000;
+  padding-bottom: 0;
+  font-style: italic;
   text-align: center;
 }
 @media only screen and (max-width: 639px) {
+  .blog-image {
+    padding: 5.5px 0.375em;
+  }
   .blog-image figcaption {
-    padding-top: 2.66666667px;
-    padding-bottom: 2.66666667px;
+    padding-top: 3.66666667px;
   }
 }
 /** --------------------------------------------------------------
